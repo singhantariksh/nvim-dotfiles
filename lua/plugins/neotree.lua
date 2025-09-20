@@ -8,9 +8,6 @@ return {
   },
   lazy = false,
   config = function()
-    opts = {
-      window = { position = "right" }
-    }
     vim.keymap.set('n', '<C-b>', ':Neotree toggle right<CR>', { silent = true, noremap = true})
   end
 }
