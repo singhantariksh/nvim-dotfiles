@@ -3,7 +3,7 @@ return {
 	version = "*",
 	opts = {
     size = 20,
-    open_mapping = [[<leader>t]],
+    open_mapping = [[<C-/>]],
     direction = "float",
     start_in_insert = true,
     persist_size = true,
