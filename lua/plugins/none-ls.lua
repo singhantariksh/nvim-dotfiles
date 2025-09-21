@@ -32,8 +32,8 @@ return {
             },
         })
 
-        vim.keymap.set("n", "<leader>ff", function()
+        vim.keymap.set("n", "<leader>f", function()
             vim.lsp.buf.format({ async = true })
-        end, { desc = "Format file" })
+        end, { desc = "[F]ormat file" })
     end,
 }

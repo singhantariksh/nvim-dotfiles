@@ -26,13 +26,11 @@ return {
     local capabilities = require('blink.cmp').get_lsp_capabilities()
 
     local on_attach = function(_, bufnr)
-      local key_opts = { buffer = bufnr, silent = true }
 
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, key_opts)
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, key_opts)
-      vim.keymap.set('n', 'gr', vim.lsp.buf.references, key_opts)
-      vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, key_opts)
-      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, key_opts)
+      vim.keymap.set('n', 'gh', vim.lsp.buf.hover, { buffer = bufnr, silent = true, desc = "Global Hover" })
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr, silent = true, desc = "Global Definition"})
+      vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = bufnr, silent = true, desc = "Rename" })
+      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { buffer = bufnr, silent = true, desc = "Code Action"})
     end
 
     for _, server_name in ipairs(opts.ensure_installed) do
