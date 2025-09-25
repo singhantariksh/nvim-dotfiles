@@ -17,6 +17,14 @@ vim.opt.showmode = false -- hide -- INSERT -- since statusline shows it
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+-- Disable comment wrapping and insertion of comment leaders
+vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
+	pattern = "*",
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+	end,
+})
+
 -- Mouse
 vim.opt.mouse = "a"
 
