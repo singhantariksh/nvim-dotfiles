@@ -7,31 +7,23 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	lazy = false,
-  opts = {
-    window = {
-      position = "right",
-    }
-  },
+	opts = {
+		window = {
+			position = "right",
+		},
+	},
 	config = function()
 		vim.keymap.set(
 			"n",
-			"<leader>bf",
+			"<C-b>",
 			":Neotree filesystem right toggle<CR>",
-			{ silent = true, noremap = true, desc = "[B]rowse: File system" }
+			{ silent = true, noremap = true, desc = "Browse File system" }
 		)
-
-		vim.keymap.set(
+    vim.keymap.set(
 			"n",
-			"<leader>bb",
-			":Neotree buffers float toggle<CR>",
-			{ silent = true, noremap = true, desc = "[B]rowse: Buffers list" }
+			"<leader>b",
+			":Neotree filesystem float<CR>",
+			{ silent = true, noremap = true, desc = "Browse File system" }
 		)
-
-		vim.keymap.set(
-			"n",
-			"<leader>bg",
-			":Neotree git_status float toggle<CR>",
-			{ silent = true, noremap = true, desc = "[B]rowse: Git status" }
-		)
-	end
+	end,
 }

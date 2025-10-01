@@ -52,7 +52,7 @@ return {
 	config = function()
 		vim.keymap.set("n", "<leader>f", function()
 			require("conform").format({ async = true, lsp_fallback = true })
-		end, { desc = "[F]ormat file" })
+		end, { desc = "Format file" })
 
 		vim.keymap.set("v", "<leader>f", function()
 			local start_line = vim.fn.line("'<")

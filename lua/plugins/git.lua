@@ -6,26 +6,26 @@ return {
 		local gs = require("gitsigns")
 
 		-- [H]unk Navigation
-		vim.keymap.set("n", "]c", gs.next_hunk, { silent = true, noremap = true, desc = "Next Git Hunk" })
-		vim.keymap.set("n", "[c", gs.prev_hunk, { silent = true, noremap = true, desc = "Previous Git Hunk" })
+		vim.keymap.set("n", "]g", gs.next_hunk, { silent = true, noremap = true, desc = "Next Git Hunk" })
+		vim.keymap.set("n", "[g", gs.prev_hunk, { silent = true, noremap = true, desc = "Previous Git Hunk" })
 
 		-- [H]unk Actions
-		vim.keymap.set("n", "<leader>hs", gs.stage_hunk, { silent = true, noremap = true, desc = "Stage Git Hunk" })
+		vim.keymap.set("n", "<leader>gs", gs.stage_hunk, { silent = true, noremap = true, desc = "Stage Git Hunk" })
 		vim.keymap.set(
 			"n",
-			"<leader>hu",
+			"<leader>gu",
 			gs.undo_stage_hunk,
 			{ silent = true, noremap = true, desc = "Unstage Git Hunk" }
 		)
-		vim.keymap.set("n", "<leader>hr", gs.reset_hunk, { silent = true, noremap = true, desc = "Reset Git Hunk" })
-		vim.keymap.set("n", "<leader>hp", gs.preview_hunk, { silent = true, noremap = true, desc = "Preview Git Hunk" })
-		vim.keymap.set("n", "<leader>hb", gs.blame_line, { silent = true, noremap = true, desc = "Git Blame Line" })
-		vim.keymap.set("n", "<leader>hB", function()
+		vim.keymap.set("n", "<leader>gr", gs.reset_hunk, { silent = true, noremap = true, desc = "Reset Git Hunk" })
+		vim.keymap.set("n", "<leader>gp", gs.preview_hunk, { silent = true, noremap = true, desc = "Preview Git Hunk" })
+		vim.keymap.set("n", "<leader>gb", gs.blame_line, { silent = true, noremap = true, desc = "Git Blame Line" })
+		vim.keymap.set("n", "<leader>gB", function()
 			gs.blame_line({ full = true })
 		end, { silent = true, noremap = true, desc = "Full Git Blame" })
 		vim.keymap.set(
 			"n",
-			"<leader>hd",
+			"<leader>gd",
 			gs.toggle_word_diff,
 			{ silent = true, noremap = true, desc = "Toggle Word Diff" }
 		)
@@ -33,13 +33,13 @@ return {
 		-- [H]unk / Buffer Actions
 		vim.keymap.set(
 			"n",
-			"<leader>hS",
+			"<leader>gS",
 			gs.stage_buffer,
 			{ silent = true, noremap = true, desc = "Stage Entire Buffer" }
 		)
 		vim.keymap.set(
 			"n",
-			"<leader>hR",
+			"<leader>gR",
 			gs.reset_buffer,
 			{ silent = true, noremap = true, desc = "Reset Entire Buffer" }
 		)

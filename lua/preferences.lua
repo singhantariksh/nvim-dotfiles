@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 -- Basic Settings
 
 -- Leader keys
@@ -21,6 +23,23 @@ vim.opt.termguicolors = true -- enable truecolor support
 vim.opt.showmode = false -- hide -- INSERT -- since statusline shows it
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.opt.signcolumn = "yes"
+vim.opt.cursorline = true
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
+
+-- Better search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.incsearch = true
+
+-- Split behavior
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+-- Better completion experience
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.pumheight = 10
 
 -- Disable comment wrapping and insertion of comment leaders
 vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
@@ -93,16 +112,9 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- Buffer & Tab Navigation
-
--- Next/Prev buffer
 vim.keymap.set("n", "<S-l>", ":bnext<CR>")
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
-
--- Wipe / Quit group
-vim.keymap.set("n", "<leader>w", ":bd<CR>", { silent = true, desc = "[W]ipe buffer" })
-
--- Diagnostics / Quickfix
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<leader>w", ":bd<CR>", { silent = true, desc = "Wipe buffer" })
 
 -- Move Lines & Visual Blocks
 
