@@ -10,6 +10,11 @@ vim.opt.tabstop = 2 -- a tab is 2 spaces
 vim.opt.softtabstop = 2 -- editing behaves like 2 spaces per tab
 vim.opt.shiftwidth = 2 -- >> and << use 2 spaces
 
+-- Line wrapping
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+
 -- Colors & UI
 vim.g.background = "dark"
 vim.opt.termguicolors = true -- enable truecolor support
