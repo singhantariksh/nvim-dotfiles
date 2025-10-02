@@ -2,6 +2,8 @@
 
 My Neovim configuration built with Lua, and the help of [typecraft's](https://youtube.com/playlist?list=PLsz00TDipIffreIaUNk64KxTIkQaGguqn&si=lKSghpiI4RgrFCxg) youtube playlist, [kickstart](https://github.com/nvim-lua/kickstart.nvim) nvim and me myself.
 
+---
+
 ## In The [Beninging](https://www.youtube.com/watch?v=vacJSHN4ZmY)
 
 **Prerequisites**: I started with Neovim 0.11.x and with [Nerd Fonts](https://www.nerdfonts.com/) too (I personally use [Maple Font NF](https://github.com/subframe7536/maple-font) btw if you care)
@@ -15,9 +17,11 @@ git clone https://github.com/singhantariksh/nvim-dotfiles.git
 
 open neovim and everything should be installed automatically (hopefully)
 
+---
+
 ## Configuration Structure
 
-```
+```tree
 ~/.config/nvim/
 ├── init.lua
 ├── lazy-lock.json
@@ -48,6 +52,8 @@ open neovim and everything should be installed automatically (hopefully)
 │   └── preferences.lua
 └── README.md
 ```
+
+---
 
 ## What does this offer you ask ?
 
@@ -100,16 +106,17 @@ open neovim and everything should be installed automatically (hopefully)
 - **[todo-comments.nvim](https://github.com/folke/todo-comments.nvim)** [`todo.lua`](./lua/plugins/todo.lua): Have too much shit to do but not too much time ? this is your friend. (if you use it)
 - **[auto-session](https://github.com/rmagatti/auto-session)** [`auto-session.lua`](./lua/plugins/auto-session.lua): remembers and reopens your files and windows (as a session). (particularly useful when constantly `:wqa`'ing to check if your plugins are working)
 
-
+---
 ## Preferences
 
 The [`preferences.lua`](lua/preferences.lua) file contains my ... preferences ?
 
 I have tried (kinda) to make the file structure understandable so I don't have to update this readme for every minor change I make in my preferences :D
 
-...
+---
 
 **Thanks!**
 
+---
 ## TL;DR
 I hate you.
