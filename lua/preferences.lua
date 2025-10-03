@@ -80,7 +80,7 @@ vim.opt.undofile = true
 
 -- Search & Highlight
 vim.opt.hlsearch = true
-vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Clear search [H]ighlight" })
+vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Clear search Highlight" })
 
 -- Yank Highlighting
 vim.api.nvim_create_autocmd("TextYankPost", {
