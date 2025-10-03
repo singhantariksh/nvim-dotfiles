@@ -17,6 +17,14 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
 
+-- Disable wrap only for markdown files
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	callback = function()
+		vim.opt_local.wrap = false
+	end,
+})
+
 -- Colors & UI
 vim.g.background = "dark"
 vim.opt.termguicolors = true -- enable truecolor support
