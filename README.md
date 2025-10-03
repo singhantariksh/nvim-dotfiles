@@ -54,6 +54,19 @@ open neovim and everything should be installed automatically (hopefully)
 
 ---
 
+## Some Screenshots
+
+### Startup Screen
+![alpha-nvim](./screenshots/greeter.png)
+
+### Editing Experience
+![Editor Screen](./screenshots/editor.png)
+
+### Navigation with fzf-lua (Harpoon integration)
+![fzf-lua + harpoon2](./screenshots/navigation.png)
+
+---
+
 ## What does this offer you ask ?
 
 ### Mr. Manager
