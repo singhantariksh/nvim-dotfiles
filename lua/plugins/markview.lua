@@ -15,8 +15,10 @@ return {
 			},
 			markdown = {
 				headings = presets.headings.glow,
-        tables = presets.tables.rounded,
+				tables = presets.tables.rounded,
 			},
 		})
+
+		vim.keymap.set("n", "<C-m>", ":Markview<CR>", { desc = "Toggle Markdown Preview" })
 	end,
 }
