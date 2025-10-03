@@ -39,7 +39,6 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>sb", fzf.git_branches, { desc = "Search Git Branches" })
 		vim.keymap.set("n", "<leader>sc", fzf.commands, { desc = "Search Commands" })
 		vim.keymap.set("n", "<leader>sd", fzf.diagnostics_document, { desc = "Search Diagnostics" })
 		vim.keymap.set("n", "<leader>sf", fzf.files, { desc = "Search Files" })
@@ -48,7 +47,6 @@ return {
 		vim.keymap.set("n", "<leader>sk", fzf.keymaps, { desc = "Search Keymaps" })
 		vim.keymap.set("n", "<leader>sr", fzf.resume, { desc = "Search Resume" })
 		vim.keymap.set("n", "<leader>ss", fzf.builtin, { desc = "Search Select FZF" })
-		vim.keymap.set("n", "<leader>su", fzf.git_status, { desc = "Search Git Status" })
 		vim.keymap.set("n", "<leader>sw", fzf.grep_cword, { desc = "Search current Word" })
 		vim.keymap.set("n", "<leader>s.", fzf.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
 		vim.keymap.set("n", "<leader><leader>", fzf.buffers, { desc = "[ ] Find existing buffers" })

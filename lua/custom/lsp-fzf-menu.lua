@@ -72,8 +72,8 @@ function Module.open()
 		},
 		winopts = {
 			height = 0.40,
-			width = 0.40,
-			row = 0.35,
+			width = 0.20,
+			row = 0.40,
 			col = 0.50,
 		},
 		actions = {

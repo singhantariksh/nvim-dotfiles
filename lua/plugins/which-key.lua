@@ -6,6 +6,7 @@ return {
 			{ "<leader>s", group = "Search" },
 			{ "<leader>g", group = "Git Hunk", mode = { "n", "v" } },
 			{ "<leader>c", group = "Code Diagnostics" },
+			{ "<leader>h", group = "Harpoon Files" },
 		},
 	},
 	keys = {

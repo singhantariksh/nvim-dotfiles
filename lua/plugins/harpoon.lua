@@ -1,39 +1,91 @@
 return {
-  "ThePrimeagen/harpoon",
-  branch = "harpoon2",
-  dependencies = { "nvim-lua/plenary.nvim", "ibhagwan/fzf-lua" },
-  config = function()
-    local harpoon = require("harpoon")
-    harpoon:setup()
+	"ThePrimeagen/harpoon",
+	branch = "harpoon2",
+	dependencies = { "nvim-lua/plenary.nvim", "ibhagwan/fzf-lua" },
+	config = function()
+		local harpoon = require("harpoon")
+		harpoon:setup()
 
-    -- FZF-Lua integration
-    local function toggle_fzf(harpoon_files)
-      local file_paths = {}
-      for idx, item in ipairs(harpoon_files.items) do
-        table.insert(file_paths, string.format("%d. %s", idx, item.value))
-      end
+		local function toggle_fzf(harpoon_files)
+			local file_paths = {}
+			for _, item in ipairs(harpoon_files.items) do
+				table.insert(file_paths, item.value)
+			end
 
-      require("fzf-lua").fzf_exec(file_paths, {
-        prompt = 'Harpoon❯ ',
-        previewer = "builtin",
-        actions = {
-          ['default'] = function(selected)
-            local idx = tonumber(selected[1]:match("^(%d+)"))
-            if idx then
-              harpoon:list():select(idx)
-            end
-          end
-        }
-      })
-    end
+			require("fzf-lua").fzf_exec(file_paths, {
+				prompt = "Harpoon❯ ",
+				fzf_opts = {
+					["--header"] = "ENTER: Open | CTRL-D: Delete | CTRL-X: Clear All",
+				},
+				previewer = "builtin",
+				actions = {
+					["default"] = function(selected)
+						local file = selected[1]
+						for idx, item in ipairs(harpoon_files.items) do
+							if item.value == file then
+								harpoon:list():select(idx)
+								break
+							end
+						end
+					end,
+					["ctrl-d"] = function(selected)
+						local file = selected[1]
+						for idx, item in ipairs(harpoon_files.items) do
+							if item.value == file then
+								harpoon:list():remove_at(idx)
+								toggle_fzf(harpoon:list())
+								break
+							end
+						end
+					end,
+					["ctrl-x"] = function()
+						harpoon:list():clear()
+						vim.notify("Harpoon list cleared", vim.log.levels.INFO)
+					end,
+				},
+			})
+		end
 
-    vim.keymap.set("n", "<A-a>", function() harpoon:list():add() end, { desc = "Add file to Harpoon" })
-    vim.keymap.set("n", "<leader>sj", function() toggle_fzf(harpoon:list()) end, { desc = "Search Harpoon" })
-    vim.keymap.set("n", "<A-h>", function() harpoon:list():select(1) end, { desc = "Harpoon to file 1" })
-    vim.keymap.set("n", "<A-j>", function() harpoon:list():select(2) end, { desc = "Harpoon to file 2" })
-    vim.keymap.set("n", "<A-k>", function() harpoon:list():select(3) end, { desc = "Harpoon to file 3" })
-    vim.keymap.set("n", "<A-l>", function() harpoon:list():select(4) end, { desc = "Harpoon to file 4" })
-    vim.keymap.set("n", "<A-p>", function() harpoon:list():prev() end, { desc = "Harpoon to previous file"})
-    vim.keymap.set("n", "<A-n>", function() harpoon:list():next() end, { desc = "Harpoon to next file"})
-  end,
+		vim.keymap.set("n", "<leader>ha", function()
+			harpoon:list():add()
+			vim.notify("Added to Harpoon", vim.log.levels.INFO)
+		end, { desc = "Harpoon: Add file" })
+
+		vim.keymap.set("n", "<leader>hh", function()
+			toggle_fzf(harpoon:list())
+		end, { desc = "Harpoon: Search files" })
+
+		vim.keymap.set("n", "<C-1>", function()
+			harpoon:list():select(1)
+		end, { desc = "Harpoon: Go to file 1" })
+		vim.keymap.set("n", "<C-2>", function()
+			harpoon:list():select(2)
+		end, { desc = "Harpoon: Go to file 2" })
+		vim.keymap.set("n", "<C-3>", function()
+			harpoon:list():select(3)
+		end, { desc = "Harpoon: Go to file 3" })
+		vim.keymap.set("n", "<C-4>", function()
+			harpoon:list():select(4)
+		end, { desc = "Harpoon: Go to file 4" })
+		vim.keymap.set("n", "<C-5>", function()
+			harpoon:list():select(5)
+		end, { desc = "Harpoon: Go to file 5" })
+
+		vim.keymap.set("n", "[h", function()
+			harpoon:list():prev()
+		end, { desc = "Harpoon: Previous file" })
+		vim.keymap.set("n", "]h", function()
+			harpoon:list():next()
+		end, { desc = "Harpoon: Next file" })
+
+		vim.keymap.set("n", "<leader>hd", function()
+			harpoon:list():remove()
+			vim.notify("Removed from Harpoon", vim.log.levels.INFO)
+		end, { desc = "Harpoon: Remove file" })
+
+		vim.keymap.set("n", "<leader>hc", function()
+			harpoon:list():clear()
+			vim.notify("Harpoon list cleared", vim.log.levels.INFO)
+		end, { desc = "Harpoon: Clear all" })
+	end,
 }

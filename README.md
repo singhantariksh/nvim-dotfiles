@@ -85,7 +85,7 @@ open neovim and everything should be installed automatically (hopefully)
 
 ### Instant Transmission
 
-- **[FzfLua](https://github.com/ibhagwan/fzf-lua)** [`fzf-lua.lua`](./lua/plugins/fzf-lua.lua): fuzzy finder for ... a whole lotta things.
+- **[Fz Lua](https://github.com/ibhagwan/fzf-lua)** [`fzf-lua.lua`](./lua/plugins/fzf-lua.lua): fuzzy finder for ... a whole lotta things.
 - **[Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)** [`neotree.lua`](./lua/plugins/neotree.lua): file explorer for viewing files haha.
 - **[Harpoon 2](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)** [`harpoon.lua`](./lua/plugins/harpoon.lua): The name's Primegan.
 
