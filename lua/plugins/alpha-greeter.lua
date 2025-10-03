@@ -23,7 +23,7 @@ return {
 
 		dashboard.section.buttons.val = {
 			dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
+			dashboard.button("f", "  Find file", ":FzfLua files <CR>"),
 			dashboard.button("c", "  Open Config", ":e ~/.config/nvim<CR>"),
 			dashboard.button("l", "  Lazy PM", ":Lazy<CR>"),
 			dashboard.button("m", "  Mason PM", ":Mason<CR>"),
