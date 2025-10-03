@@ -11,8 +11,7 @@ My Neovim configuration built with Lua, and the help of [typecraft's](https://yo
 **Installation**:
 
 ```bash
-cd ~/.config/nvim/
-git clone https://github.com/singhantariksh/nvim-dotfiles.git
+git clone https://github.com/singhantariksh/nvim-dotfiles.git ~/.config/nvim
 ```
 
 open neovim and everything should be installed automatically (hopefully)
