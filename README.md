@@ -87,6 +87,8 @@ open neovim and everything should be installed automatically (hopefully)
 
     > **Note:** I customized Markview and Prettier for my workflow. See [Some Tweaks for Markview](#some-tweaks-for-markview) for details.
 
+### LSP (& Stuff)
+
 -   **[Mason](https://github.com/mason-org/mason.nvim)** [`lsp-config.lua`](./lua/plugins/lsp-config.lua): package manager for LSP servers, formatters, and linters.
 -   **[Mason-LSPconfig](https://github.com/mason-org/mason-lspconfig.nvim)** [`lsp-config.lua`](./lua/plugins/lsp-config.lua): Bridge between Mason and LSPs.
 -   **[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)** [`lsp-config.lua`](./lua/plugins/lsp-config.lua): Quickstart configs for Neovim's LSP.
