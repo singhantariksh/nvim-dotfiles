@@ -21,7 +21,7 @@ return {
       },
     })
     vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-    vim.keymap.set("n", "<leader>sa", "<cmd>AutoSession search<CR>",
+    vim.keymap.set("n", "<leader>as", "<cmd>AutoSession search<CR>",
       { desc = "Search sessions" })
   end,
 }
