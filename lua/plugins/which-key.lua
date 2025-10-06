@@ -9,6 +9,9 @@ return {
 			{ "<leader>h", group = "Harpoon Files" },
 			{ "<leader>a", group = "Auto Session" },
 		},
+		win = {
+			border = "rounded",
+		},
 	},
 	keys = {
 		{

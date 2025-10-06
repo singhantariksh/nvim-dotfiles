@@ -23,10 +23,16 @@ return {
 
 	config = function(_, opts)
 		require("mason-lspconfig").setup(opts)
+
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 		local on_attach = function(_, bufnr)
-			vim.keymap.set("n", "<leader>l", "<cmd>FzfLua lsp_finder<CR>", { buffer = bufnr, silent = true, desc = "LSP Finder" })
+			vim.keymap.set(
+				"n",
+				"<leader>l",
+				"<cmd>FzfLua lsp_finder<CR>",
+				{ buffer = bufnr, silent = true, desc = "LSP Finder" }
+			)
 			vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = bufnr, silent = true, desc = "Rename" })
 		end
 

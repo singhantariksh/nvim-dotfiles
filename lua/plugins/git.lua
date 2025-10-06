@@ -1,7 +1,18 @@
 return {
 	"lewis6991/gitsigns.nvim",
-	config = function()
-		opts = {}
+	opts = {
+		signs = {
+			add = { text = "+" },
+			change = { text = "~" },
+			delete = { text = "_" },
+			topdelete = { text = "‾" },
+			changedelete = { text = "≈" },
+			untracked = { text = "?" },
+		},
+	},
+
+	config = function(_, opts)
+		require("gitsigns").setup(opts)
 
 		local gs = require("gitsigns")
 
@@ -20,9 +31,11 @@ return {
 		vim.keymap.set("n", "<leader>gr", gs.reset_hunk, { silent = true, noremap = true, desc = "Reset Git Hunk" })
 		vim.keymap.set("n", "<leader>gp", gs.preview_hunk, { silent = true, noremap = true, desc = "Preview Git Hunk" })
 		vim.keymap.set("n", "<leader>gb", gs.blame_line, { silent = true, noremap = true, desc = "Git Blame Line" })
+
 		vim.keymap.set("n", "<leader>gB", function()
 			gs.blame_line({ full = true })
 		end, { silent = true, noremap = true, desc = "Full Git Blame" })
+
 		vim.keymap.set(
 			"n",
 			"<leader>gd",

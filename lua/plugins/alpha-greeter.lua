@@ -43,8 +43,8 @@ return {
 		dashboard.section.footer.opts = {
 			position = "center",
 		}
-		dashboard.section.footer.opts.hl = "Constant"
-		dashboard.section.header.opts.hl = "Special"
+		dashboard.section.footer.opts.hl = "Title"
+		dashboard.section.header.opts.hl = "WarningMsg"
 
 		alpha.setup(dashboard.opts)
 

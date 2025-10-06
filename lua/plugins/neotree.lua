@@ -12,18 +12,16 @@ return {
 			position = "right",
 		},
 	},
-	config = function()
-		vim.keymap.set(
-			"n",
-			"<C-b>",
+	keys = {
+		{
+			"<leader>e",
 			":Neotree filesystem right toggle<CR>",
-			{ silent = true, noremap = true, desc = "Browse File system" }
-		)
-    vim.keymap.set(
-			"n",
+			desc = "Browse File system (right)",
+		},
+		{
 			"<leader>b",
 			":Neotree filesystem float<CR>",
-			{ silent = true, noremap = true, desc = "Browse File system" }
-		)
-	end,
+			desc = "Browse File system (float)",
+		},
+	},
 }

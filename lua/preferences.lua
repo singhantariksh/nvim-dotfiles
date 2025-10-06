@@ -53,13 +53,18 @@ vim.opt.splitright = true
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.pumheight = 10
 
--- Disable comment wrapping and insertion of comment leaders
+-- Disable comment wrapping and insertion of comment leaders when pressing Enter (Carriage Return)
 vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
 	pattern = "*",
 	callback = function()
 		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
 	end,
 })
+
+-- Enable Smart Folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false
 
 -- Mouse
 vim.opt.mouse = "a"
