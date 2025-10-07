@@ -4,7 +4,7 @@
 -- Why? Because individual keymaps for so many LSP commands would be a headache.
 -- Claude helped a bunch with this one.
 --
--- Usage: require("custom.lsp-menu").open()
+-- Usage: require("custom.lsp-diag-menu").open()
 -- ============================================================
 
 local Module = {}
@@ -65,7 +65,7 @@ function Module.open()
 	end
 
 	fzf.fzf_exec(items, {
-		prompt = "LSP Menu❯ ",
+		prompt = "❯ ",
 		fzf_opts = {
 			["--header"] = "Select LSP Command",
 			["--preview-window"] = "hidden",

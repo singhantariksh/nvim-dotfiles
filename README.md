@@ -27,33 +27,39 @@ open neovim and everything should be installed automatically (hopefully)
 ├── init.lua
 ├── lazy-lock.json
 ├── lua
-│   ├── custom
-│   │   └── lsp-fzf-menu.lua
-│   ├── plugins
-│   │   ├── alpha-greeter.lua
-│   │   ├── auto-session.lua
-│   │   ├── blink-cmp.lua
-│   │   ├── bufferline.lua
-│   │   ├── comments.lua
-│   │   ├── conform.lua
-│   │   ├── fzf-lua.lua
-│   │   ├── git.lua
-│   │   ├── harpoon.lua
-│   │   ├── indent-line.lua
-│   │   ├── lsp-config.lua
-│   │   ├── lualine.lua
-│   │   ├── neotree.lua
-│   │   ├── render-markdown.lua
-│   │   ├── smooth-cursor.lua
-│   │   ├── terminal.lua
-│   │   ├── themes.lua
-│   │   ├── todo.lua
-│   │   ├── treesitter.lua
-│   │   ├── undotree.lua
-│   │   └── which-key.lua
-│   ├── plugins.lua
-│   └── preferences.lua
-└── README.md
+│   ├── custom
+│   │   └── lsp-diag-menu.lua
+│   ├── plugins
+│   │   ├── alpha-greeter.lua
+│   │   ├── autopairs.lua
+│   │   ├── auto-session.lua
+│   │   ├── blink-cmp.lua
+│   │   ├── bufferline.lua
+│   │   ├── comments.lua
+│   │   ├── conform.lua
+│   │   ├── fzf-lua.lua
+│   │   ├── git.lua
+│   │   ├── harpoon.lua
+│   │   ├── indent-line.lua
+│   │   ├── lsp-config.lua
+│   │   ├── lualine.lua
+│   │   ├── mini-modules.lua
+│   │   ├── neotree.lua
+│   │   ├── render-markdown.lua
+│   │   ├── smooth-cursor.lua
+│   │   ├── terminal.lua
+│   │   ├── themes.lua
+│   │   ├── todo.lua
+│   │   ├── treesitter.lua
+│   │   ├── undotree.lua
+│   │   └── which-key.lua
+│   ├── plugins.lua
+│   └── preferences.lua
+├── README.md
+└── screenshots
+    ├── editor.png
+    ├── greeter.png
+    └── navigation.png
 ```
 
 ---
@@ -110,9 +116,9 @@ open neovim and everything should be installed automatically (hopefully)
 - **[Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)** [`neotree.lua`](./lua/plugins/neotree.lua): file explorer for viewing files haha.
 - **[Harpoon 2](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)** [`harpoon.lua`](./lua/plugins/harpoon.lua): The name's Primegan.
 
-#### Custom LSP Menu with FzfLua
+#### Custom LSP Diagnostics Menu with FzfLua
 
-- **[Custom LSP FzfLua Menu](./lua/custom/lsp-fzf-menu.lua)**: Henceforth, one menu shall rule them all. Created for FzfLua LSP options that `lsp_finder` doth not cover (see ### LSP/Diagnostics in their README). Press `<leader>c`, behold the menu, select thy command, and it shall be executed forthwith. Verily, 'tis better than remembering keybinds for features used but thrice per annum. (Claude did the coding whilst I provided the vibe)
+- **[Custom LSP Diagnostics Menu](./lua/custom/lsp-diag-menu.lua)**: Henceforth, one menu shall rule them all. Created for FzfLua LSP options that `lsp_finder` doth not cover (see ### LSP/Diagnostics in their README). Press `<leader>c`, behold the menu, select thy command, and it shall be executed forthwith. Verily, 'tis better than remembering keybinds for features used but thrice per annum. (Claude did the coding whilst I provided the vibe)
 
 ### Git
 
@@ -126,6 +132,8 @@ open neovim and everything should be installed automatically (hopefully)
 - **[Which-Key](https://github.com/folke/which-key.nvim)** [`which-key.lua`](./lua/plugins/which-key.lua): For those who can't remember their keybinds. (me)
 - **[todo-comments.nvim](https://github.com/folke/todo-comments.nvim)** [`todo.lua`](./lua/plugins/todo.lua): Have too much shit to do but not too much time ? this is your friend. (if you use it)
 - **[auto-session](https://github.com/rmagatti/auto-session)** [`auto-session.lua`](./lua/plugins/auto-session.lua): remembers and reopens your files and windows (as a session). (particularly useful when constantly `:wqa`'ing to check if your plugins are working)
+- **[nvim-autopairs](https://github.com/windwp/nvim-autopairs)** [`autopairs.lua`](./lua/plugins/autopairs.lua): A treesitter aware (if you turn it on) autopair plugin, cool.
+- **[mini.nvim](https://github.com/nvim-mini/mini.nvim)** [`mini-modules.lua`](./lua/plugins/mini-modules.lua): Some modules from the mini project for nvim.
 
 ### Eye-Candy
 

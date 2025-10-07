@@ -67,7 +67,8 @@ return {
 			fzf.files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "Search Neovim files" })
 
-		local lsp_menu = require("custom.lsp-fzf-menu")
-		vim.keymap.set("n", "<leader>c", lsp_menu.open, { desc = "Code diagnostics menu" })
+		local lsp_diag = require("custom.lsp-diag-menu")
+		vim.keymap.set("n", "<leader>c", lsp_diag.open, { desc = "Code diagnostics menu" })
+
 	end,
 }

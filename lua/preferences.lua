@@ -17,12 +17,10 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
 
--- Disable wrap only for markdown files
 -- Revert Indentation width for markdown as well
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
 	callback = function()
-		vim.opt_local.wrap = false
 		vim.opt_local.tabstop = 4
 		vim.opt_local.softtabstop = 4
 		vim.opt_local.shiftwidth = 4
@@ -80,12 +78,12 @@ vim.g.have_nerd_font = true
 -- Swap & Undo Files
 
 -- Swap files (centralized)
--- local swap_path = vim.fn.stdpath("state") .. "/swap/"
--- if vim.fn.isdirectory(swap_path) == 0 then
--- 	vim.fn.mkdir(swap_path, "p")
--- end
--- vim.opt.directory = swap_path
-vim.opt.swapfile = false -- started using auto-sessions!
+local swap_path = vim.fn.stdpath("state") .. "/swap/"
+if vim.fn.isdirectory(swap_path) == 0 then
+	vim.fn.mkdir(swap_path, "p")
+end
+vim.opt.directory = swap_path
+vim.opt.swapfile = true
 
 -- Persistent undo
 local undo_path = vim.fn.stdpath("data") .. "/undodir/"
