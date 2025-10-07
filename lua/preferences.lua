@@ -80,12 +80,12 @@ vim.g.have_nerd_font = true
 -- Swap & Undo Files
 
 -- Swap files (centralized)
-local swap_path = vim.fn.stdpath("state") .. "/swap/"
-if vim.fn.isdirectory(swap_path) == 0 then
-	vim.fn.mkdir(swap_path, "p")
-end
-vim.opt.directory = swap_path
-vim.opt.swapfile = true
+-- local swap_path = vim.fn.stdpath("state") .. "/swap/"
+-- if vim.fn.isdirectory(swap_path) == 0 then
+-- 	vim.fn.mkdir(swap_path, "p")
+-- end
+-- vim.opt.directory = swap_path
+vim.opt.swapfile = false -- started using auto-sessions!
 
 -- Persistent undo
 local undo_path = vim.fn.stdpath("data") .. "/undodir/"
@@ -142,3 +142,5 @@ vim.keymap.set("n", "<A-K>", ":m .-2<CR>==", { noremap = true, silent = true, de
 -- Move visual blocks
 vim.keymap.set("v", "<A-J>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move block down" })
 vim.keymap.set("v", "<A-K>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move block up" })
+vim.keymap.set("v", "<A-L>", ">gv", { noremap = true, silent = true, desc = "Move block left" })
+vim.keymap.set("v", "<A-H>", "<gv", { noremap = true, silent = true, desc = "Move block right" })
