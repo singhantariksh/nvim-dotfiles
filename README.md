@@ -27,8 +27,6 @@ open neovim and everything should be installed automatically (hopefully)
 ├── init.lua
 ├── lazy-lock.json
 ├── lua
-│   ├── custom
-│   │   └── lsp-diag-menu.lua
 │   ├── plugins
 │   │   ├── alpha-greeter.lua
 │   │   ├── autopairs.lua
@@ -116,13 +114,9 @@ open neovim and everything should be installed automatically (hopefully)
 - **[Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)** [`neotree.lua`](./lua/plugins/neotree.lua): file explorer for viewing files haha.
 - **[Harpoon 2](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)** [`harpoon.lua`](./lua/plugins/harpoon.lua): The name's Primegan.
 
-#### Custom LSP Diagnostics Menu with FzfLua
-
-- **[Custom LSP Diagnostics Menu](./lua/custom/lsp-diag-menu.lua)**: Henceforth, one menu shall rule them all. Created for FzfLua LSP options that `lsp_finder` doth not cover (see ### LSP/Diagnostics in their README). Press `<leader>c`, behold the menu, select thy command, and it shall be executed forthwith. Verily, 'tis better than remembering keybinds for features used but thrice per annum. (Claude did the coding whilst I provided the vibe)
-
 ### Git
 
-- **[Gitsigns](https://github.com/lewis6991/gitsigns.nvim)** [`git.lua`](./lua/plugins/git.lua): I'll explain when I understand.
+- **[Gitsigns](https://github.com/lewis6991/gitsigns.nvim)** [`git.lua`](./lua/plugins/git.lua): I only use it to see git diffs, I don't understand hunks very well.
 
 ### QoL
 
