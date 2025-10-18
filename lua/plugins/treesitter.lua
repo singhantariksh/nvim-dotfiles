@@ -5,7 +5,13 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
-		"nvim-treesitter/nvim-treesitter-context",
+		{
+			"nvim-treesitter/nvim-treesitter-context",
+			opts = {
+				enable = true,
+				multiline_threshold = 1,
+			},
+		},
 	},
 	opts = {
 		auto_install = true,
@@ -17,5 +23,7 @@ return {
 	config = function(_, opts)
 		local configs = require("nvim-treesitter.configs")
 		configs.setup(opts)
+
+		vim.keymap.set("n", "<leader>t", "<cmd>TSContext toggle<CR>", { desc = "Toggle Treesitter Context" })
 	end,
 }

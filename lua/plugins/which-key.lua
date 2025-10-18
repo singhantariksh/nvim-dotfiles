@@ -6,11 +6,12 @@ return {
 			mappings = false,
 		},
 		spec = {
+      { "<leader>a", group = "Auto Session" },
+      { "<leader>c", group = "Code Diagnostics" },
+      { "<leader>g", group = "Git Hunk", mode = { "n", "v" } },
+      { "<leader>h", group = "Harpoon Files" },
+      { "<leader>l", group = "LSP Functions" },
 			{ "<leader>s", group = "Search" },
-			{ "<leader>g", group = "Git Hunk", mode = { "n", "v" } },
-			{ "<leader>c", group = "Code Diagnostics" },
-			{ "<leader>h", group = "Harpoon Files" },
-			{ "<leader>a", group = "Auto Session" },
 		},
 		win = {
 			border = "rounded",

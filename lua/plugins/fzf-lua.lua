@@ -40,7 +40,6 @@ return {
 		})
 
 		vim.keymap.set("n", "<leader>sc", fzf.commands, { desc = "Search Commands" })
-		vim.keymap.set("n", "<leader>sd", fzf.diagnostics_document, { desc = "Search Diagnostics" })
 		vim.keymap.set("n", "<leader>sf", fzf.files, { desc = "Search Files" })
 		vim.keymap.set("n", "<leader>sg", fzf.live_grep, { desc = "Search by Grep" })
 		vim.keymap.set("n", "<leader>sh", fzf.helptags, { desc = "Search Help" })

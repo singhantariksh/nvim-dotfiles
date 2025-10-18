@@ -6,6 +6,19 @@ return {
 		terminal_colors = true,
 		sidebars = "transparent",
 		floats = "transparent",
+
+		on_highlights = function(hl, colors)
+			-- Make TreesitterContext darker than normal background
+			hl.TreesitterContext = {
+				bg = colors.bg_dark,
+			}
+
+			hl.TreesitterContextBottom = {
+				bg = colors.bg_dark,
+				underline = true,
+				sp = colors.bg_highlight,
+			}
+		end,
 	},
 
 	config = function(_, opts)

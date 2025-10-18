@@ -24,24 +24,49 @@ return {
 	config = function(_, opts)
 		require("mason-lspconfig").setup(opts)
 
-		local capabilities = require("blink.cmp").get_lsp_capabilities()
+		vim.api.nvim_create_autocmd("LspAttach", {
+			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+			callback = function(ev)
 
-		local on_attach = function(_, bufnr)
-			vim.keymap.set(
-				"n",
-				"<leader>l",
-				"<cmd>FzfLua lsp_finder<CR>",
-				{ buffer = bufnr, silent = true, desc = "LSP Finder" }
-			)
-			vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = bufnr, silent = true, desc = "Rename" })
-		end
+				vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = ev.buf, silent = true, desc = "Rename" })
 
-		for _, server_name in ipairs(opts.ensure_installed) do
-			vim.lsp.enable(server_name)
-			vim.lsp.config(server_name, {
-				on_attach = on_attach,
-				capabilities = capabilities,
-			})
-		end
+				vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, silent = true, desc = "Hover" })
+
+        vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help,{ buffer = ev.buf, silent = true, desc = "Signature Help" })
+
+        vim.keymap.set("n", "<leader>sd", "<cmd>FzfLua lsp_document_diagnostics<CR>", { desc = "Search Diagnostics" })
+
+				vim.keymap.set("n", "<leader>lf", "<cmd>FzfLua lsp_finder<CR>", { desc = "Search LSP Finder" })
+
+				vim.keymap.set("n", "<leader>ld", "<cmd>FzfLua lsp_definitions<CR>", { buffer = ev.buf, silent = true, desc = "Go to Definition" })
+
+				vim.keymap.set("n", "<leader>lD", "<cmd>FzfLua lsp_declarations<CR>", { buffer = ev.buf, silent = true, desc = "Go to Declaration" })
+
+        vim.keymap.set("n", "<leader>le", vim.diagnostic.open_float,{ buffer = ev.buf, silent = true, desc = "Show Diagnostic" })
+
+				vim.keymap.set("n", "<leader>li", "<cmd>FzfLua lsp_implementations<CR>", { buffer = ev.buf, silent = true, desc = "Go to Implementation" })
+
+				vim.keymap.set("n", "<leader>lr", "<cmd>FzfLua lsp_references<CR>", { buffer = ev.buf, silent = true, desc = "Find References" })
+
+				vim.keymap.set("n", "<leader>ls", "<cmd>FzfLua lsp_document_symbols<CR>", { buffer = ev.buf, silent = true, desc = "Document Symbols" })
+
+				vim.keymap.set("n", "<leader>lS", "<cmd>FzfLua lsp_workspace_symbols<CR>", { buffer = ev.buf, silent = true, desc = "Workspace Symbols" })
+
+				vim.keymap.set("n", "<leader>lt", "<cmd>FzfLua lsp_typedefs<CR>", { buffer = ev.buf, silent = true, desc = "Type Definition" })
+
+        vim.keymap.set("n", "<leader>q", vim.diagnostic.setqflist, { buffer = ev.buf, silent = true, desc = "Diagnostics to Quickfix" })
+
+        vim.keymap.set("n", "<leader>Q", vim.diagnostic.setloclist, { buffer = ev.buf, silent = true, desc = "Buffer Diagnostics to Loclist" })
+
+			end,
+		})
+
+		vim.keymap.set("n", "<leader>lq", "<cmd>FzfLua quickfix<CR>", { silent = true, desc = "Quickfix List" })
+
+		vim.keymap.set("n", "<leader>ll", "<cmd>FzfLua loclist<CR>", { silent = true, desc = "Location List" })
+
+		vim.keymap.set("n", "<leader>lQ", "<cmd>FzfLua quickfix_stack<CR>", { silent = true, desc = "Quickfix History" })
+
+		vim.keymap.set("n", "<leader>lL", "<cmd>FzfLua loclist_stack<CR>", { silent = true, desc = "Quickfix History" })
 	end,
 }
