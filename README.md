@@ -126,7 +126,7 @@ open neovim and everything should be installed automatically (hopefully)
 - **[Which-Key](https://github.com/folke/which-key.nvim)** [`which-key.lua`](./lua/plugins/which-key.lua): For those who can't remember their keybinds. (me)
 - **[todo-comments.nvim](https://github.com/folke/todo-comments.nvim)** [`todo.lua`](./lua/plugins/todo.lua): Have too much shit to do but not too much time ? this is your friend. (if you use it)
 - **[auto-session](https://github.com/rmagatti/auto-session)** [`auto-session.lua`](./lua/plugins/auto-session.lua): remembers and reopens your files and windows (as a session). (particularly useful when constantly `:wqa`'ing to check if your plugins are working)
-- **[nvim-autopairs](https://github.com/windwp/nvim-autopairs)** [`autopairs.lua`](./lua/plugins/autopairs.lua): A treesitter aware (if you turn it on) autopair plugin, cool.
+- **[ultimate-autopairs](https://github.com/altermo/ultimate-autopair.nvim)** [`autopairs.lua`](./lua/plugins/autopairs.lua): A treesitter aware autopair plugin, with some cool extensions to further increase it's functionality.
 - **[mini.nvim](https://github.com/nvim-mini/mini.nvim)** [`mini-modules.lua`](./lua/plugins/mini-modules.lua): Some modules from the mini project for nvim.
 
 ### Eye-Candy
