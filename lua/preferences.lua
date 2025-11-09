@@ -11,6 +11,7 @@ vim.opt.expandtab = true -- use spaces instead of tabs
 vim.opt.tabstop = 2 -- a tab is 2 spaces
 vim.opt.softtabstop = 2 -- editing behaves like 2 spaces per tab
 vim.opt.shiftwidth = 2 -- >> and << use 2 spaces
+vim.opt.textwidth = 120 -- sets default text width for wrapping and formatting
 
 -- Line wrapping
 vim.opt.wrap = true
@@ -19,12 +20,12 @@ vim.opt.breakindent = true
 
 -- Revert Indentation width for markdown as well
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "markdown",
-	callback = function()
-		vim.opt_local.tabstop = 4
-		vim.opt_local.softtabstop = 4
-		vim.opt_local.shiftwidth = 4
-	end,
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.tabstop = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.shiftwidth = 4
+  end,
 })
 
 -- Colors & UI
@@ -53,10 +54,10 @@ vim.opt.pumheight = 10
 
 -- Disable comment wrapping and insertion of comment leaders when pressing Enter (Carriage Return)
 vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
-	pattern = "*",
-	callback = function()
-		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
-	end,
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+  end,
 })
 
 -- Enable Smart Folding
@@ -69,7 +70,7 @@ vim.opt.mouse = "a"
 
 -- Clipboard sync with OS
 vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
+  vim.o.clipboard = "unnamedplus"
 end)
 
 -- Nerd Font
@@ -80,7 +81,7 @@ vim.g.have_nerd_font = true
 -- Swap files (centralized)
 local swap_path = vim.fn.stdpath("state") .. "/swap/"
 if vim.fn.isdirectory(swap_path) == 0 then
-	vim.fn.mkdir(swap_path, "p")
+  vim.fn.mkdir(swap_path, "p")
 end
 vim.opt.directory = swap_path
 vim.opt.swapfile = true
@@ -88,7 +89,7 @@ vim.opt.swapfile = true
 -- Persistent undo
 local undo_path = vim.fn.stdpath("data") .. "/undodir/"
 if vim.fn.isdirectory(undo_path) == 0 then
-	vim.fn.mkdir(undo_path, "p")
+  vim.fn.mkdir(undo_path, "p")
 end
 vim.opt.undodir = undo_path
 vim.opt.undofile = true
@@ -99,12 +100,16 @@ vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Clear search Highlight
 
 -- Yank Highlighting
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-	callback = function()
-		vim.hl.on_yank()
-	end,
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+  callback = function()
+    vim.hl.on_yank()
+  end,
 })
+
+-- <Esc> key alternative keymap for easier access
+-- NOTE: use QMK to get tap-hold : esc-ctrl on capslock (alternative)
+vim.keymap.set("i", "jk", "<Esc>", { silent = true, noremap = false })
 
 -- Window & Pane Management
 
@@ -121,15 +126,15 @@ vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
 -- Resize panes
-vim.keymap.set("n", "<C-Up>", ":resize -2<CR>")
-vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
+vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", { silent = true, desc = "Horizontal Resize ++" })
+vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", { silent = true, desc = "Horizontal Resize --" })
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { silent = true, desc = "Vertical Resize ++" })
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { silent = true, desc = "Vertical Resize --" })
 
 -- Buffer & Tab Navigation
-vim.keymap.set("n", "<S-l>", ":bnext<CR>")
-vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
-vim.keymap.set("n", "<leader>w", ":bd<CR>", { silent = true, desc = "Wipe buffer" })
+vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true, desc = "Next Buffer" })
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true, desc = "Previous Buffer" })
+-- vim.keymap.set("n", "<leader>w", ":bd<CR>", { silent = true, desc = "Wipe buffer" }) -- I use Snacks.nvim for this now !
 
 -- Move Lines & Visual Blocks
 
