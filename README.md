@@ -78,7 +78,3 @@ open neovim and everything should be installed automatically (hopefully)
 ![fzf-lua + harpoon2](./assets/navigation.png)
 
 ---
-
-```
-
-```
