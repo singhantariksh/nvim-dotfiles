@@ -58,7 +58,8 @@ open neovim and everything should be installed automatically (hopefully)
 │   │   └── which-key.lua
 │   ├── plugins.lua
 │   └── preferences.lua
-└── README.md```
+└── README.md
+```
 
 ---
 
@@ -77,3 +78,7 @@ open neovim and everything should be installed automatically (hopefully)
 ![fzf-lua + harpoon2](./assets/navigation.png)
 
 ---
+
+```
+
+```
