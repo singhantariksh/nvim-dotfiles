@@ -5,6 +5,11 @@ return {
     prompt = {
       prefix = { { " ", "FlashPromptIcon" } },
     },
+    modes = {
+      char = {
+        highlight = { backdrop = false }
+      }
+    }
   },
   keys = {
     {
@@ -40,7 +45,7 @@ return {
       desc = "Treesitter Search",
     },
     {
-      "<c-s>",
+      "<c-j>",
       mode = { "c" },
       function()
         require("flash").toggle()

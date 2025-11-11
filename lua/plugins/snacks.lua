@@ -10,7 +10,7 @@ return {
     indent = { enabled = true },
     input = { enabled = true },
     notifier = { enabled = true },
-    -- words = { enabled = true },
+    words = { enabled = true, modes = { "n", "c" } },
   },
   config = function(_, opts)
     require("snacks").setup(opts)
