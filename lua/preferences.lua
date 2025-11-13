@@ -97,6 +97,7 @@ vim.opt.undofile = true
 -- Search & Highlight
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { silent = true, desc = "Clear search Highlight" })
+vim.keymap.set("n", "<C-a>", "gg0vG$") -- Select all text
 
 -- Yank Highlighting
 vim.api.nvim_create_autocmd("TextYankPost", {
