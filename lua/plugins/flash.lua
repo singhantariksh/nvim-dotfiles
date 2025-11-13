@@ -1,15 +1,14 @@
 return {
   "folke/flash.nvim",
-  event = { "BufReadPre", "BufNewFile" },
   opts = {
     prompt = {
       prefix = { { " ", "FlashPromptIcon" } },
     },
     modes = {
       char = {
-        highlight = { backdrop = false }
-      }
-    }
+        highlight = { backdrop = false },
+      },
+    },
   },
   keys = {
     {
@@ -52,5 +51,9 @@ return {
       end,
       desc = "Toggle Flash Search",
     },
+    { "f" },
+    { "F" },
+    { "t" },
+    { "T" },
   },
 }

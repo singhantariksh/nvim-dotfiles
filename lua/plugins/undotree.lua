@@ -1,5 +1,6 @@
 return {
   "mbbill/undotree",
+  cmd = { "UndotreeToggle", "UndotreeFocus" },
   config = function()
     vim.g.undotree_WindowLayout = 4
     vim.g.undotree_DiffAutoOpen = false

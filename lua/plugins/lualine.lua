@@ -1,5 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
+  event = "VeryLazy",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
     options = {
@@ -13,8 +14,12 @@ return {
       lualine_c = { "diagnostics" },
       -- lualine_c = { "%=", "filename" }, -- filename at the center of the statusline
       lualine_x = { "encoding", "fileformat" },
-      lualine_y = { "lsp_status" },
-      lualine_z = { "os.date('%I:%M %p')" },
+      lualine_y = { "location" },
+      lualine_z = {
+        function()
+          return "  " .. os.date("%R")
+        end,
+      },
     },
     inactive_sections = {
       lualine_a = { "filename" },

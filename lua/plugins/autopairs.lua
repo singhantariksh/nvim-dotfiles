@@ -14,7 +14,7 @@ return {
   {
     {
       "abecodes/tabout.nvim",
-      lazy = false,
+      event = { "BufReadPre", "BufNewFile" },
       config = function()
         require("tabout").setup({
           tabkey = "<A-o>",
@@ -38,7 +38,6 @@ return {
         })
       end,
       opt = true,
-      event = "InsertCharPre",
       priority = 1000,
     },
   },

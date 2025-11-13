@@ -1,6 +1,24 @@
 return {
   "ibhagwan/fzf-lua",
+  cmd = { "FzfLua" },
   dependencies = { "nvim-tree/nvim-web-devicons", "folke/snacks.nvim" },
+
+  keys = {
+    { "<leader>sc", desc = "Search Commands" },
+    { "<leader>sf", desc = "Search Files" },
+    { "<leader>sg", desc = "Search by Grep" },
+    { "<leader>sh", desc = "Search Help" },
+    { "<leader>sk", desc = "Search Keymaps" },
+    { "<leader>sr", desc = "Search Resume" },
+    { "<leader>ss", desc = "Search Select FZF" },
+    { "<leader>sw", desc = "Search current Word" },
+    { "<leader>s.", desc = 'Search Recent Files ("." for repeat)' },
+    { "<leader><leader>", desc = "[ ] Find existing buffers" },
+    { "<leader>/", desc = "[/] Fuzzy search in current buffer" },
+    { "<leader>s/", desc = "Search [/] in Open Files" },
+    { "<leader>sn", desc = "Search Neovim files" },
+  },
+
   config = function()
     local fzf = require("fzf-lua")
     require("fzf-lua").register_ui_select()

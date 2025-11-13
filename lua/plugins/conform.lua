@@ -2,7 +2,7 @@ local prettier_opts = { "prettierd", "prettier", stop_after_first = true }
 
 return {
 	"stevearc/conform.nvim",
-
+  cmd = "ConformInfo",
 	opts = {
 		formatters_by_ft = {
 			-- Lua
