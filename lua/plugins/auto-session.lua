@@ -19,6 +19,7 @@ return {
     },
 
     -- Got this from https://github.com/rmagatti/auto-session/issues/433
+    -- Uncomment the below if you want persistent harpoon quicklists across all your cwds
     -- pre_restore_cmds = {
     --   function()
     --     require("harpoon"):sync()
