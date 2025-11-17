@@ -19,7 +19,12 @@ return {
 
   config = function()
     local harpoon = require("harpoon")
-    harpoon:setup()
+    harpoon:setup({
+      settings = {
+        save_on_toggle = true,
+        sync_on_ui_close = true,
+      },
+    })
 
     local function toggle_fzf(harpoon_files)
       local file_paths = {}
@@ -30,7 +35,7 @@ return {
       require("fzf-lua").fzf_exec(file_paths, {
         prompt = "Harpoon❯ ",
         fzf_opts = {
-          ["--header"] = "ENTER: Open | CTRL-D: Delete | CTRL-X: Clear All",
+          ["--header"] = "ENTER: Open | CTRL-D: Delete | CTRL-C: Clear All",
         },
         previewer = "builtin",
         actions = {
@@ -43,17 +48,19 @@ return {
               end
             end
           end,
-          ["ctrl-d"] = function(selected)
+          ["ctrl-D"] = function(selected)
             local file = selected[1]
             for idx, item in ipairs(harpoon_files.items) do
               if item.value == file then
-                harpoon:list():remove_at(idx)
+                table.remove(harpoon:list().items, idx)
+                harpoon:list()._length = harpoon:list()._length - 1
+
                 toggle_fzf(harpoon:list())
                 break
               end
             end
           end,
-          ["ctrl-x"] = function()
+          ["ctrl-C"] = function()
             harpoon:list():clear()
             vim.notify("Harpoon list cleared", vim.log.levels.INFO)
           end,

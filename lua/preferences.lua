@@ -38,6 +38,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
+vim.opt.conceallevel = 1
 
 -- Better search
 vim.opt.ignorecase = true
@@ -130,6 +131,7 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { silent = true, desc
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true, desc = "Next Buffer" })
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true, desc = "Previous Buffer" })
 -- vim.keymap.set("n", "<leader>w", ":bd<CR>", { silent = true, desc = "Wipe buffer" }) -- I use Snacks.nvim for this now !
+vim.keymap.set("n", "<leader>W", ":bd!<CR>", { silent = true, desc = "Wipe buffer --forcefully" })
 
 -- Move Lines & Visual Blocks
 

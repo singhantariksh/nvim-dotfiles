@@ -6,10 +6,35 @@ return {
     bigfile = { enabled = true },
     bufdelete = { enabled = true },
     gitbrowse = { enabled = true },
-    image = { enabled = true },
+    image = {
+      enabled = true,
+      math = {
+        enabled = false,
+      },
+      formats = {
+        "png",
+        "jpg",
+        "jpeg",
+        "gif",
+        "bmp",
+        "webp",
+        "tiff",
+        "heic",
+        "avif",
+        "mp4",
+        "mov",
+        "avi",
+        "mkv",
+        "webm",
+        "pdf",
+        "icns",
+        "ico",
+        "svg",
+      },
+    },
     indent = { enabled = true },
     input = { enabled = true },
-    notifier = { enabled = true },
+    -- notifier = { enabled = true },
     words = { enabled = true, modes = { "n", "c" } },
   },
   config = function(_, opts)
@@ -21,9 +46,9 @@ return {
       Snacks.bufdelete()
     end, { silent = true, desc = "Wipe buffer" })
 
-    vim.keymap.set("n", "<leader>nh", function()
-      Snacks.notifier.show_history()
-    end, {})
+    -- vim.keymap.set("n", "<leader>nh", function()
+    --   Snacks.notifier.show_history()
+    -- end, {})
 
     vim.keymap.set("n", "<leader>go", function()
       Snacks.gitbrowse()

@@ -41,7 +41,7 @@ return {
 
         vim.keymap.set("n", "<leader>sd", "<cmd>FzfLua lsp_document_diagnostics<CR>", { desc = "Search Diagnostics" })
 
-        vim.keymap.set("n", "<leader>lf", "<cmd>FzfLua lsp_finder<CR>", { desc = "Search LSP Finder" })
+        vim.keymap.set("n", "<leader>sl", "<cmd>FzfLua lsp_finder<CR>", { desc = "Search LSP Finder" })
 
         vim.keymap.set(
           "n",

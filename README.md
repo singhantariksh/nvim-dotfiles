@@ -43,21 +43,23 @@ open neovim and everything should be installed automatically (hopefully)
 │   │   ├── fzf-lua.lua
 │   │   ├── git.lua
 │   │   ├── harpoon.lua
+│   │   ├── lorem.lua
 │   │   ├── lsp-config.lua
 │   │   ├── lualine.lua
 │   │   ├── mini-modules.lua
 │   │   ├── neotree.lua
+│   │   ├── obsidian.lua
 │   │   ├── render-markdown.lua
 │   │   ├── smooth-cursor.lua
 │   │   ├── snacks.lua
-│   │   ├── terminal.lua
 │   │   ├── themes.lua
 │   │   ├── todo.lua
 │   │   ├── treesitter.lua
 │   │   ├── undotree.lua
 │   │   └── which-key.lua
 │   ├── plugins.lua
-│   └── preferences.lua
+│   ├── preferences.lua
+│   └── terminal.lua
 └── README.md
 ```
 
@@ -71,10 +73,13 @@ open neovim and everything should be installed automatically (hopefully)
 
 ### Editing Experience
 
-![Editor Screen](./assets/editor.png)
+![Editing Screen](./assets/editor.png)
 
 ### Navigation with fzf-lua (Harpoon integration)
 
 ![fzf-lua + harpoon2](./assets/navigation.png)
+### Custom Toggle-able Floating Terminal
+
+![Floating Terminal](./assets/terminal.png)
 
 ---

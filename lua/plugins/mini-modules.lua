@@ -1,12 +1,4 @@
 return {
-  -- {
-  --   "echasnovski/mini.ai",
-  --   event = "VeryLazy",
-  --   version = false,
-  --   keys = { { "a" }, { "i" } },
-  --   opts = {},
-  -- },
-
   {
     "echasnovski/mini.surround",
     event = "VeryLazy",
@@ -29,4 +21,12 @@ return {
     keys = { { "gS" } },
     opts = {},
   },
+
+  -- {
+  --   "echasnovski/mini.ai",
+  --   event = "VeryLazy",
+  --   version = false,
+  --   keys = { { "a" }, { "i" } },
+  --   opts = {},
+  -- },
 }

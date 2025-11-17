@@ -13,6 +13,7 @@ return {
       { "<leader>h", group = "Harpoon Files" },
       { "<leader>l", group = "LSP Functions" },
       { "<leader>s", group = "Search" },
+      { "<leader>t", group = "Toggle" },
     },
     win = {
       border = "rounded",

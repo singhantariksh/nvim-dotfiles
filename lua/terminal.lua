@@ -1,3 +1,5 @@
+-- Credit: modified from the file by TJ DeVries
+
 vim.keymap.set("t", "jk", [[<C-\><C-n>]])
 
 -- Persistent state table (-1 means invalid, i.e. do not exist)

@@ -7,6 +7,15 @@ return {
       --fastwarp = Alt + e
       --fastwwarp reverse = Alt + E
       --{(|)} > fastwarp > {(}|)
+
+      extensions = {
+        tsnode = {
+          separate = { "string", "comment" },
+        },
+        alpha = {
+          filter = true,
+        },
+      },
     },
   },
 

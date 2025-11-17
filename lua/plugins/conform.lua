@@ -57,7 +57,18 @@ return {
 		{
 			"<leader>f",
 			function()
-				require("conform").format({ async = true, lsp_fallback = true })
+				require("conform").format({ 
+					async = true, 
+					lsp_fallback = true 
+				}, function(err)
+					-- If formatting failed, fallback to manual indentation
+					if err then
+						local pos = vim.api.nvim_win_get_cursor(0)
+						vim.cmd('normal! gg=G')
+						vim.api.nvim_win_set_cursor(0, pos)
+						vim.notify("Formatted with built-in indentation", vim.log.levels.INFO)
+					end
+				end)
 			end,
 			desc = "Format file",
 			mode = "n",

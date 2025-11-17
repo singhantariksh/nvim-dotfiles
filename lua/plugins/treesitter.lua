@@ -10,7 +10,9 @@ return {
       event = "BufReadPost",
       opts = {
         enable = true,
-        multiline_threshold = 1,
+        max_lines = 2, -- How many lines the window should span. Values <= 0 mean no limit.
+        multiline_threshold = 1, -- Maximum number of lines to show for a single context
+        trim_scope = "inner", -- Which context lines to discard if `max_lines` is exceeded. 'inner' | 'outer'
       },
     },
   },
@@ -25,6 +27,6 @@ return {
     local configs = require("nvim-treesitter.configs")
     configs.setup(opts)
 
-    vim.keymap.set("n", "<leader>t", "<cmd>TSContext toggle<CR>", { desc = "Toggle Treesitter Context" })
+    vim.keymap.set("n", "<leader>tt", "<cmd>TSContext toggle<CR>", { desc = "Toggle Treesitter Context" })
   end,
 }
