@@ -1,36 +1,39 @@
 return {
-	"MeanderingProgrammer/render-markdown.nvim",
+  "MeanderingProgrammer/render-markdown.nvim",
   ft = { "markdown", "mdx" },
-	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-	opts = {
-		file_types = { "markdown" },
-		code = {
-			sign = false,
-			width = "block",
-			right_pad = 4,
-			position = "right",
-		},
-		heading = {
-			sign = false,
-			width = "block",
-			left_pad = 2,
-			right_pad = 4,
-		},
-	},
+  dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+  opts = {
+    file_types = { "markdown" },
+    code = {
+      sign = false,
+      width = "block",
+      right_pad = 4,
+      position = "right",
+    },
+    heading = {
+      sign = false,
+      width = "block",
+      left_pad = 2,
+      right_pad = 4,
+    },
+    checkbox = {
+      render_mode = true,
+    },
+  },
 
-	config = function(_, opts)
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = "markdown",
-			callback = function()
-				require("render-markdown").setup(opts)
+  config = function(_, opts)
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "markdown",
+      callback = function()
+        require("render-markdown").setup(opts)
 
-				vim.keymap.set(
-					"n",
-					"<C-m>",
-					"<cmd>RenderMarkdown toggle<CR>",
-					{ buffer = true, desc = "Toggle Markdown Preview" }
-				)
-			end,
-		})
-	end,
+        vim.keymap.set(
+          "n",
+          "<C-m>",
+          "<cmd>RenderMarkdown toggle<CR>",
+          { buffer = true, desc = "Toggle Markdown Preview" }
+        )
+      end,
+    })
+  end,
 }
