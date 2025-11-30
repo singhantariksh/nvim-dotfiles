@@ -5,10 +5,15 @@ return {
 
   keys = {
     { "<leader>sc", desc = "Search Commands" },
+    { "<leader>sd", desc = "Search Diagnostics" },
     { "<leader>sf", desc = "Search Files" },
     { "<leader>sg", desc = "Search by Grep" },
     { "<leader>sh", desc = "Search Help" },
     { "<leader>sk", desc = "Search Keymaps" },
+    { "<leader>sl", desc = "Location List" },
+    { "<leader>sL", desc = "Quickfix History" },
+    { "<leader>sq", desc = "Quickfix List" },
+    { "<leader>sQ", desc = "Quickfix History" },
     { "<leader>sr", desc = "Search Resume" },
     { "<leader>ss", desc = "Search Select FZF" },
     { "<leader>sw", desc = "Search current Word" },
@@ -62,6 +67,10 @@ return {
     vim.keymap.set("n", "<leader>sg", fzf.live_grep, { desc = "Search by Grep" })
     vim.keymap.set("n", "<leader>sh", fzf.helptags, { desc = "Search Help" })
     vim.keymap.set("n", "<leader>sk", fzf.keymaps, { desc = "Search Keymaps" })
+    vim.keymap.set("n", "<leader>sl", fzf.loclist, { silent = true, desc = "Location List" })
+    vim.keymap.set("n", "<leader>sL", fzf.loclist_stack, { silent = true, desc = "Quickfix History" })
+    vim.keymap.set("n", "<leader>sq", fzf.quickfix, { silent = true, desc = "Quickfix List" })
+    vim.keymap.set("n", "<leader>sQ", fzf.quickfix_stack, { silent = true, desc = "Quickfix History" })
     vim.keymap.set("n", "<leader>sr", fzf.resume, { desc = "Search Resume" })
     vim.keymap.set("n", "<leader>ss", fzf.builtin, { desc = "Search Select FZF" })
     vim.keymap.set("n", "<leader>sw", fzf.grep_cword, { desc = "Search current Word" })

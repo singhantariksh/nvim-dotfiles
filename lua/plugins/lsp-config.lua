@@ -41,7 +41,7 @@ return {
 
         vim.keymap.set("n", "<leader>sd", "<cmd>FzfLua lsp_document_diagnostics<CR>", { desc = "Search Diagnostics" })
 
-        vim.keymap.set("n", "<leader>sl", "<cmd>FzfLua lsp_finder<CR>", { desc = "Search LSP Finder" })
+        vim.keymap.set("n", "<leader>ll", "<cmd>FzfLua lsp_finder<CR>", { desc = "Search LSP Finder" })
 
         vim.keymap.set(
           "n",
@@ -59,7 +59,7 @@ return {
 
         vim.keymap.set(
           "n",
-          "<leader>le",
+          "<leader>d",
           vim.diagnostic.open_float,
           { buffer = ev.buf, silent = true, desc = "Show Diagnostic" }
         )
@@ -114,13 +114,5 @@ return {
         )
       end,
     })
-
-    vim.keymap.set("n", "<leader>lq", "<cmd>FzfLua quickfix<CR>", { silent = true, desc = "Quickfix List" })
-
-    vim.keymap.set("n", "<leader>ll", "<cmd>FzfLua loclist<CR>", { silent = true, desc = "Location List" })
-
-    vim.keymap.set("n", "<leader>lQ", "<cmd>FzfLua quickfix_stack<CR>", { silent = true, desc = "Quickfix History" })
-
-    vim.keymap.set("n", "<leader>lL", "<cmd>FzfLua loclist_stack<CR>", { silent = true, desc = "Quickfix History" })
   end,
 }
