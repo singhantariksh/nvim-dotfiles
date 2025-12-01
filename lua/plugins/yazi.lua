@@ -5,6 +5,7 @@ return {
   dependencies = {
     { "nvim-lua/plenary.nvim", lazy = true },
   },
+
   keys = {
     {
       "<leader>yy",
@@ -15,7 +16,7 @@ return {
     {
       "<leader>yw",
       "<cmd>Yazi cwd<cr>",
-      desc = "Open yazi: current working direcotry",
+      desc = "Open yazi: current working directory",
     },
     {
       "<leader>yt",
@@ -23,12 +24,23 @@ return {
       desc = "Open yazi: continue last session",
     },
   },
+
   opts = {
     open_for_directories = true,
+
     keymaps = {
-      show_help = "<f1>",
+      open_file_in_horizontal_split = "<c-h>",
+    },
+
+    integrations = {
+      grep_in_directory = function(directory)
+        require("fzf-lua").live_grep({
+          cwd = directory,
+        })
+      end,
     },
   },
+
   init = function()
     vim.g.loaded_netrwPlugin = 1
   end,

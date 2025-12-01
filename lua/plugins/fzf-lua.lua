@@ -24,43 +24,53 @@ return {
     { "<leader>sn", desc = "Search Neovim files" },
   },
 
-  config = function()
+  opts = {
+    oldfiles = {
+      include_current_session = true,
+    },
+
+    winopts = {
+      height = 0.85,
+      width = 0.80,
+      row = 0.35,
+      col = 0.50,
+      preview = {
+        layout = "horizontal",
+        horizontal = "right:50%",
+      },
+    },
+
+    keymap = {
+      builtin = {
+        ["<C-d>"] = "preview-page-down",
+        ["<C-u>"] = "preview-page-up",
+      },
+    },
+
+    files = {
+      prompt = "Files❯ ",
+      git_icons = true,
+      file_icons = true,
+      color_icons = true,
+    },
+
+    grep = {
+      prompt = "Grep❯ ",
+      input_prompt = "Grep For❯ ",
+    },
+
+    lsp = {
+      prompt_postfix = "❯ ",
+      cwd_only = false,
+      async_or_timeout = 5000,
+    },
+  },
+
+  config = function(_, opts)
     local fzf = require("fzf-lua")
     require("fzf-lua").register_ui_select()
 
-    fzf.setup({
-      winopts = {
-        height = 0.85,
-        width = 0.80,
-        row = 0.35,
-        col = 0.50,
-        preview = {
-          layout = "horizontal",
-          horizontal = "right:50%",
-        },
-      },
-      keymap = {
-        builtin = {
-          ["<C-d>"] = "preview-page-down",
-          ["<C-u>"] = "preview-page-up",
-        },
-      },
-      files = {
-        prompt = "Files❯ ",
-        git_icons = true,
-        file_icons = true,
-        color_icons = true,
-      },
-      grep = {
-        prompt = "Grep❯ ",
-        input_prompt = "Grep For❯ ",
-      },
-      lsp = {
-        prompt_postfix = "❯ ",
-        cwd_only = false,
-        async_or_timeout = 5000,
-      },
-    })
+    fzf.setup(opts)
 
     vim.keymap.set("n", "<leader>sc", fzf.commands, { desc = "Search Commands" })
     vim.keymap.set("n", "<leader>sf", fzf.files, { desc = "Search Files" })
