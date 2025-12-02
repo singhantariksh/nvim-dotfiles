@@ -9,16 +9,20 @@ return {
       section_separators = { left = "", right = "" },
     },
     sections = {
-      lualine_a = { "mode" },
+      lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
       lualine_b = { "branch", "diff" },
       lualine_c = { "diagnostics" },
       -- lualine_c = { "%=", "filename" }, -- filename at the center of the statusline
       lualine_x = { "encoding", "fileformat" },
       lualine_y = { "location" },
       lualine_z = {
-        function()
-          return "  " .. os.date("%R")
-        end,
+        {
+          function()
+            return "  " .. os.date("%R")
+          end,
+          separator = { right = "" },
+          left_padding = 2,
+        },
       },
     },
     inactive_sections = {
