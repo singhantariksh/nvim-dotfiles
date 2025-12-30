@@ -19,6 +19,12 @@ return {
     checkbox = {
       render_mode = true,
     },
+    win_options = {
+      conceallevel = {
+        default = 2,
+        rendered = 2,
+      },
+    },
   },
 
   config = function(_, opts)

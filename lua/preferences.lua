@@ -110,8 +110,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- <Esc> key alternative keymap for easier access
+-- Swapped Escape and Capslock with niri config, no longer need this :)
+-- vim.keymap.set("i", "jk", "<Esc>", { silent = true, noremap = false })
 -- NOTE: use QMK to get tap-hold : esc-ctrl on capslock (alternative)
-vim.keymap.set("i", "jk", "<Esc>", { silent = true, noremap = false })
 
 -- Window & Pane Management
 

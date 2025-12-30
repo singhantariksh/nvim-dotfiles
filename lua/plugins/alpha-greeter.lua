@@ -26,7 +26,7 @@ return {
       dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
       dashboard.button("f", "  Find file", ":FzfLua files <CR>"),
       dashboard.button("c", "  Open Config", ":cd ~/.config/nvim<CR> :Alpha<CR>"),
-      dashboard.button("v", "  Open Vault", ":cd ~/Documents/Vault<CR> :Alpha<CR>"),
+      dashboard.button("v", "  Open Vault", ":cd ~/Vault<CR> :Alpha<CR>"),
       dashboard.button("l", "  Lazy PM", ":Lazy<CR>"),
       dashboard.button("m", "  Mason PM", ":Mason<CR>"),
       dashboard.button("q", "󰩈  Quit NVIM", ":qa<CR>"),
