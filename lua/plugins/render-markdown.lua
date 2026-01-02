@@ -21,8 +21,8 @@ return {
     },
     win_options = {
       conceallevel = {
-        default = 2,
-        rendered = 2,
+        default = 1,
+        rendered = 1,
       },
     },
   },
@@ -35,7 +35,7 @@ return {
 
         vim.keymap.set(
           "n",
-          "<C-m>",
+          "<leader>tm",
           "<cmd>RenderMarkdown toggle<CR>",
           { buffer = true, desc = "Toggle Markdown Preview" }
         )

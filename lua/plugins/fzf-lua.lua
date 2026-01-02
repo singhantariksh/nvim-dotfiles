@@ -25,6 +25,9 @@ return {
   },
 
   opts = {
+
+    -- file_ignore_patterns = { "" },
+
     oldfiles = {
       include_current_session = true,
     },
