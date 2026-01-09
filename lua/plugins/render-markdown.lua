@@ -1,9 +1,9 @@
 return {
   "MeanderingProgrammer/render-markdown.nvim",
-  ft = { "markdown", "mdx" },
+  ft = { "markdown", "mdx", "vimwiki" },
   dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
   opts = {
-    file_types = { "markdown" },
+    file_types = { "markdown", "mdx", "vimwiki" },
     code = {
       sign = false,
       width = "block",
@@ -27,19 +27,11 @@ return {
     },
   },
 
-  config = function(_, opts)
-    vim.api.nvim_create_autocmd("FileType", {
-      pattern = "markdown",
-      callback = function()
-        require("render-markdown").setup(opts)
-
-        vim.keymap.set(
-          "n",
-          "<leader>tm",
-          "<cmd>RenderMarkdown toggle<CR>",
-          { buffer = true, desc = "Toggle Markdown Preview" }
-        )
-      end,
-    })
-  end,
+  keys = {
+    {
+      "<leader>tm",
+      "<cmd>RenderMarkdown toggle<CR>",
+      desc = "Toggle Markdown Preview",
+    },
+  },
 }

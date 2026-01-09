@@ -28,6 +28,15 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Add mdx as a valid filetype
+vim.filetype.add({
+  extension = {
+    mdx = 'mdx'
+  }
+})
+vim.treesitter.language.register('markdown', 'mdx')
+vim.treesitter.language.register('markdown', 'vimwiki')
+
 -- Colors & UI
 vim.g.background = "dark"
 vim.opt.termguicolors = true -- enable truecolor support
