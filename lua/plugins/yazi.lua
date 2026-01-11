@@ -8,13 +8,13 @@ return {
 
   keys = {
     {
-      "<leader>yy",
+      "<leader>yw",
       mode = { "n", "v" },
       "<cmd>Yazi<cr>",
       desc = "Open yazi: current file",
     },
     {
-      "<leader>yw",
+      "<leader>yy",
       "<cmd>Yazi cwd<cr>",
       desc = "Open yazi: current working directory",
     },

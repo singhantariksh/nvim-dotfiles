@@ -4,24 +4,45 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons", "folke/snacks.nvim" },
 
   keys = {
-    { "<leader>sc", desc = "Search Commands" },
-    { "<leader>sd", desc = "Search Diagnostics" },
-    { "<leader>sf", desc = "Search Files" },
-    { "<leader>sg", desc = "Search by Grep" },
-    { "<leader>sh", desc = "Search Help" },
-    { "<leader>sk", desc = "Search Keymaps" },
-    { "<leader>sl", desc = "Location List" },
-    { "<leader>sL", desc = "Quickfix History" },
-    { "<leader>sq", desc = "Quickfix List" },
-    { "<leader>sQ", desc = "Quickfix History" },
-    { "<leader>sr", desc = "Search Resume" },
-    { "<leader>ss", desc = "Search Select FZF" },
-    { "<leader>sw", desc = "Search current Word" },
-    { "<leader>s.", desc = 'Search Recent Files ("." for repeat)' },
-    { "<leader><leader>", desc = "[ ] Find existing buffers" },
-    { "<leader>/", desc = "[/] Fuzzy search in current buffer" },
-    { "<leader>s/", desc = "Search [/] in Open Files" },
-    { "<leader>sn", desc = "Search Neovim files" },
+    { "<leader>sc", "<cmd>FzfLua commands<cr>", desc = "Search Commands" },
+    { "<leader>sd", "<cmd>FzfLua lsp_document_diagnostics<cr>", desc = "Search Diagnostics (file)" },
+    { "<leader>sD", "<cmd>FzfLua lsp_workspace_diagnostics<cr>", desc = "Search Diagnostics (project)" },
+    { "<leader>sf", "<cmd>FzfLua files<cr>", desc = "Search Files" },
+    { "<leader>sg", "<cmd>FzfLua live_grep<cr>", desc = "Search by Grep" },
+    { "<leader>sh", "<cmd>FzfLua helptags<cr>", desc = "Search Help" },
+    { "<leader>sk", "<cmd>FzfLua keymaps<cr>", desc = "Search Keymaps" },
+    { "<leader>sl", "<cmd>FzfLua loclist<cr>", desc = "Location List" },
+    { "<leader>sL", "<cmd>FzfLua loclist_stack<cr>", desc = "Location List History" },
+    { "<leader>sq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix List" },
+    { "<leader>sQ", "<cmd>FzfLua quickfix_stack<cr>", desc = "Quickfix History" },
+    { "<leader>sr", "<cmd>FzfLua resume<cr>", desc = "Search Resume" },
+    { "<leader>ss", "<cmd>FzfLua builtin<cr>", desc = "Search Select FZF" },
+    { "<leader>sw", "<cmd>FzfLua grep_cword<cr>", desc = "Search current Word" },
+    { "<leader>s.", "<cmd>FzfLua oldfiles<cr>", desc = 'Search Recent Files ("." for repeat)' },
+    { "<leader><leader>", "<cmd>FzfLua buffers<cr>", desc = "[ ] Find existing buffers" },
+    { "<leader>/", "<cmd>FzfLua blines<cr>", desc = "[/] Fuzzy search in current buffer" },
+    {
+      "<leader>s/",
+      function()
+        require("fzf-lua").live_grep({
+          prompt = "Live Grep in Open Buffers❯ ",
+          no_header = false,
+          fzf_opts = { ["--header"] = "Searching in open buffers" },
+          cwd = nil,
+          buffers = true,
+        })
+      end,
+      desc = "Search [/] in Open Files",
+    },
+    {
+      "<leader>sn",
+      function()
+        require("fzf-lua").files({
+          cwd = vim.fn.stdpath("config"),
+        })
+      end,
+      desc = "Search Neovim files",
+    },
   },
 
   opts = {
@@ -71,39 +92,7 @@ return {
 
   config = function(_, opts)
     local fzf = require("fzf-lua")
-    require("fzf-lua").register_ui_select()
-
     fzf.setup(opts)
-
-    vim.keymap.set("n", "<leader>sc", fzf.commands, { desc = "Search Commands" })
-    vim.keymap.set("n", "<leader>sf", fzf.files, { desc = "Search Files" })
-    vim.keymap.set("n", "<leader>sg", fzf.live_grep, { desc = "Search by Grep" })
-    vim.keymap.set("n", "<leader>sh", fzf.helptags, { desc = "Search Help" })
-    vim.keymap.set("n", "<leader>sk", fzf.keymaps, { desc = "Search Keymaps" })
-    vim.keymap.set("n", "<leader>sl", fzf.loclist, { silent = true, desc = "Location List" })
-    vim.keymap.set("n", "<leader>sL", fzf.loclist_stack, { silent = true, desc = "Quickfix History" })
-    vim.keymap.set("n", "<leader>sq", fzf.quickfix, { silent = true, desc = "Quickfix List" })
-    vim.keymap.set("n", "<leader>sQ", fzf.quickfix_stack, { silent = true, desc = "Quickfix History" })
-    vim.keymap.set("n", "<leader>sr", fzf.resume, { desc = "Search Resume" })
-    vim.keymap.set("n", "<leader>ss", fzf.builtin, { desc = "Search Select FZF" })
-    vim.keymap.set("n", "<leader>sw", fzf.grep_cword, { desc = "Search current Word" })
-    vim.keymap.set("n", "<leader>s.", fzf.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
-    vim.keymap.set("n", "<leader><leader>", fzf.buffers, { desc = "[ ] Find existing buffers" })
-
-    vim.keymap.set("n", "<leader>/", fzf.blines, { desc = "[/] Fuzzily search in current buffer" })
-
-    vim.keymap.set("n", "<leader>s/", function()
-      fzf.live_grep({
-        prompt = "Live Grep in Open Buffers❯ ",
-        no_header = false,
-        fzf_opts = { ["--header"] = "Searching in open buffers" },
-        cwd = nil,
-        buffers = true,
-      })
-    end, { desc = "Search [/] in Open Files" })
-
-    vim.keymap.set("n", "<leader>sn", function()
-      fzf.files({ cwd = vim.fn.stdpath("config") })
-    end, { desc = "Search Neovim files" })
+    fzf.register_ui_select()
   end,
 }

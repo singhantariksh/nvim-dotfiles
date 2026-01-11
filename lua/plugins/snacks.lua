@@ -38,9 +38,9 @@ return {
     words = { enabled = true, modes = { "n", "c" } },
   },
   config = function(_, opts)
-    require("snacks").setup(opts)
-
     Snacks = require("snacks")
+
+    Snacks.setup(opts)
 
     vim.keymap.set("n", "<leader>w", function()
       Snacks.bufdelete()
