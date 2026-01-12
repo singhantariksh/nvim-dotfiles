@@ -31,11 +31,11 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Add mdx as a valid filetype
 vim.filetype.add({
   extension = {
-    mdx = 'mdx'
-  }
+    mdx = "mdx",
+  },
 })
-vim.treesitter.language.register('markdown', 'mdx')
-vim.treesitter.language.register('markdown', 'vimwiki')
+vim.treesitter.language.register("markdown", "mdx")
+vim.treesitter.language.register("markdown", "vimwiki")
 
 -- Colors & UI
 vim.g.background = "dark"
@@ -71,9 +71,15 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
 })
 
 -- Enable Smart Folding
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldenable = false
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldenable = false
+
+-- UFO Fold settings
+vim.o.foldcolumn = "1"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
 -- Mouse
 vim.opt.mouse = "a"

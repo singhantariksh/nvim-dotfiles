@@ -31,7 +31,7 @@ return {
     {
       "<leader>tm",
       "<cmd>RenderMarkdown toggle<CR>",
-      desc = "Toggle Markdown Preview",
+      desc = "Toggle markdown preview",
     },
   },
 }

@@ -27,6 +27,6 @@ return {
     local configs = require("nvim-treesitter.configs")
     configs.setup(opts)
 
-    vim.keymap.set("n", "<leader>tt", "<cmd>TSContext toggle<CR>", { desc = "Toggle Treesitter Context" })
+    vim.keymap.set("n", "<leader>tt", "<cmd>TSContext toggle<CR>", { desc = "Toggle treesitter context" })
   end,
 }

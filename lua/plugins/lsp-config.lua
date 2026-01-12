@@ -28,7 +28,7 @@ return {
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)
-        vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = ev.buf, silent = true, desc = "Rename" })
+        -- vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = ev.buf, silent = true, desc = "Rename" })
 
         vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, silent = true, desc = "Hover" })
 

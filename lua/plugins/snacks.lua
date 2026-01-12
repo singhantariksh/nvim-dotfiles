@@ -33,8 +33,8 @@ return {
       },
     },
     indent = { enabled = true },
-    input = { enabled = true },
-    -- notifier = { enabled = true },
+    lazygit = { enabled = true, configure = true },
+    notifier = { enabled = true },
     words = { enabled = true, modes = { "n", "c" } },
   },
   config = function(_, opts)
@@ -46,12 +46,16 @@ return {
       Snacks.bufdelete()
     end, { silent = true, desc = "Wipe buffer" })
 
-    -- vim.keymap.set("n", "<leader>nh", function()
-    --   Snacks.notifier.show_history()
-    -- end, {})
+    vim.keymap.set("n", "<leader>tn", function()
+      Snacks.notifier.show_history()
+    end, { silent = true, desc = "Toggle notification history" })
 
     vim.keymap.set("n", "<leader>go", function()
       Snacks.gitbrowse()
-    end, { silent = true, desc = "Open in browser" })
+    end, { silent = true, desc = "Open repo in browser" })
+
+    vim.keymap.set("n", "<leader>gg", function()
+      Snacks.lazygit()
+    end, { silent = true, desc = "Open lazygit" })
   end,
 }
