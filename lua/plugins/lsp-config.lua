@@ -19,7 +19,7 @@ return {
   dependencies = {
     { "mason-org/mason.nvim", event = "VeryLazy", opts = {} },
     { "neovim/nvim-lspconfig", event = "LspAttach" },
-    { "saghen/blink.cmp", event = "InsertEnter" }
+    { "saghen/blink.cmp", event = "InsertEnter" },
   },
 
   config = function(_, opts)
@@ -28,6 +28,7 @@ return {
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)
+        -- replaced by inc-rename plugin
         -- vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = ev.buf, silent = true, desc = "Rename" })
 
         vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, silent = true, desc = "Hover" })
@@ -38,7 +39,7 @@ return {
           vim.lsp.buf.signature_help,
           { buffer = ev.buf, silent = true, desc = "Signature Help" }
         )
-
+        -- moved to fzf lua config
         -- vim.keymap.set("n", "<leader>sd", "<cmd>FzfLua lsp_document_diagnostics<CR>", { desc = "Search Diagnostics" })
 
         vim.keymap.set("n", "<leader>ll", "<cmd>FzfLua lsp_finder<CR>", { desc = "Search LSP Finder" })

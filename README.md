@@ -27,7 +27,8 @@ open neovim and everything should be installed automatically (hopefully)
 ├── assets
 │   ├── editor.png
 │   ├── greeter.png
-│   └── navigation.png
+│   ├── navigation.png
+│   └── terminal.png
 ├── init.lua
 ├── lazy-lock.json
 ├── lua
@@ -37,26 +38,39 @@ open neovim and everything should be installed automatically (hopefully)
 │   │   ├── auto-session.lua
 │   │   ├── blink-cmp.lua
 │   │   ├── bufferline.lua
+│   │   ├── codecompanion.lua
+│   │   ├── color-picker.lua
 │   │   ├── comments.lua
 │   │   ├── conform.lua
+│   │   ├── csv-view.lua
 │   │   ├── flash.lua
 │   │   ├── fzf-lua.lua
 │   │   ├── git.lua
+│   │   ├── grug-far.lua
 │   │   ├── harpoon.lua
+│   │   ├── inc-rename.lua
+│   │   ├── indent-o-matic.lua
 │   │   ├── lorem.lua
 │   │   ├── lsp-config.lua
 │   │   ├── lualine.lua
 │   │   ├── mini-modules.lua
-│   │   ├── neotree.lua
+│   │   ├── navic-winbar.lua
 │   │   ├── obsidian.lua
+│   │   ├── presence.lua
 │   │   ├── render-markdown.lua
+│   │   ├── showkeys.lua
+│   │   ├── smart-yank.lua
 │   │   ├── smooth-cursor.lua
 │   │   ├── snacks.lua
+│   │   ├── suda.lua
 │   │   ├── themes.lua
 │   │   ├── todo.lua
 │   │   ├── treesitter.lua
+│   │   ├── ufo.lua
 │   │   ├── undotree.lua
-│   │   └── which-key.lua
+│   │   ├── vim-matchup.lua
+│   │   ├── which-key.lua
+│   │   └── yazi.lua
 │   ├── plugins.lua
 │   ├── preferences.lua
 │   └── terminal.lua
@@ -75,9 +89,9 @@ open neovim and everything should be installed automatically (hopefully)
 
 ![Editing Screen](./assets/editor.png)
 
-### Navigation with fzf-lua (Harpoon integration)
+### Navigation with fzf-lua (fuzzy search inside the current buffer)
 
-![fzf-lua + harpoon2](./assets/navigation.png)
+![fzf-lua](./assets/navigation.png)
 ### Custom Toggle-able Floating Terminal
 
 ![Floating Terminal](./assets/terminal.png)

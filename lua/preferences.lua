@@ -130,6 +130,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- vim.keymap.set("i", "jk", "<Esc>", { silent = true, noremap = false })
 -- NOTE: use QMK to get tap-hold : esc-ctrl on capslock (alternative)
 
+-- Disable the command-line window (q:)
+vim.keymap.set("n", "q:", "<nop>", { desc = "Disable command-line window" })
+
 -- Window & Pane Management
 
 -- Move focus between panes
