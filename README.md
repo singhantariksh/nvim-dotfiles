@@ -33,44 +33,48 @@ open neovim and everything should be installed automatically (hopefully)
 ├── lazy-lock.json
 ├── lua
 │   ├── plugins
-│   │   ├── alpha-greeter.lua
-│   │   ├── autopairs.lua
-│   │   ├── auto-session.lua
-│   │   ├── blink-cmp.lua
-│   │   ├── bufferline.lua
-│   │   ├── codecompanion.lua
-│   │   ├── color-picker.lua
-│   │   ├── comments.lua
-│   │   ├── conform.lua
-│   │   ├── csv-view.lua
-│   │   ├── flash.lua
-│   │   ├── fzf-lua.lua
-│   │   ├── git.lua
-│   │   ├── grug-far.lua
-│   │   ├── harpoon.lua
-│   │   ├── inc-rename.lua
-│   │   ├── indent-o-matic.lua
-│   │   ├── lorem.lua
-│   │   ├── lsp-config.lua
-│   │   ├── lualine.lua
-│   │   ├── mini-modules.lua
-│   │   ├── navic-winbar.lua
-│   │   ├── obsidian.lua
-│   │   ├── presence.lua
-│   │   ├── render-markdown.lua
-│   │   ├── showkeys.lua
-│   │   ├── smart-yank.lua
-│   │   ├── smooth-cursor.lua
-│   │   ├── snacks.lua
-│   │   ├── suda.lua
-│   │   ├── themes.lua
-│   │   ├── todo.lua
-│   │   ├── treesitter.lua
-│   │   ├── ufo.lua
-│   │   ├── undotree.lua
-│   │   ├── vim-matchup.lua
-│   │   ├── which-key.lua
-│   │   └── yazi.lua
+│   │   ├── editing
+│   │   │   ├── auto-pairs.lua
+│   │   │   ├── comments.lua
+│   │   │   ├── flash.lua
+│   │   │   ├── inc-rename.lua
+│   │   │   ├── indent-o-matic.lua
+│   │   │   ├── lorem.lua
+│   │   │   ├── mini-modules.lua
+│   │   │   ├── smart-yank.lua
+│   │   │   ├── todo.lua
+│   │   │   ├── ultra-fold.lua
+│   │   │   ├── undo-tree.lua
+│   │   │   └── vim-matchup.lua
+│   │   ├── lsp-n-stuff
+│   │   │   ├── blink-cmp.lua
+│   │   │   ├── code-companion.lua
+│   │   │   ├── conform.lua
+│   │   │   ├── lsp-config.lua
+│   │   │   └── treesitter.lua
+│   │   ├── tools
+│   │   │   ├── auto-session.lua
+│   │   │   ├── color-picker.lua
+│   │   │   ├── csv-view.lua
+│   │   │   ├── fzf-lua.lua
+│   │   │   ├── git.lua
+│   │   │   ├── grug-far.lua
+│   │   │   ├── harpoon.lua
+│   │   │   ├── obsidian.lua
+│   │   │   ├── snacks.lua
+│   │   │   ├── suda.lua
+│   │   │   ├── which-key.lua
+│   │   │   └── yazi.lua
+│   │   └── ui
+│   │       ├── alpha-greeter.lua
+│   │       ├── bufferline.lua
+│   │       ├── lualine.lua
+│   │       ├── navic-winbar.lua
+│   │       ├── presence.lua
+│   │       ├── render-markdown.lua
+│   │       ├── showkeys.lua
+│   │       ├── smooth-cursor.lua
+│   │       └── themes.lua
 │   ├── plugins.lua
 │   ├── preferences.lua
 │   └── terminal.lua
