@@ -30,7 +30,8 @@ return {
       enabled = true,
       -- style = "foreground+virtual_left",
       style = "background",
-      virtual_text = " ",
+      -- virtual_text = "  ",
+      -- emphasis = false,
     },
   },
 }

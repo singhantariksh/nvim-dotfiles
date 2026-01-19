@@ -43,6 +43,15 @@ return {
       end,
       desc = "Search Neovim files",
     },
+    {
+      "<leader>sv",
+      function()
+        require("fzf-lua").files({
+          cwd = "~/Vault/",
+        })
+      end,
+      desc = "Search Obsidian Vault files",
+    },
   },
 
   opts = {
