@@ -15,6 +15,9 @@ return {
       "jdtls",
       "sqlls",
     },
+    automatic_enable = {
+      exclude = { "harper_ls" },
+    },
   },
   dependencies = {
     { "mason-org/mason.nvim", event = "VeryLazy", opts = {} },
@@ -24,6 +27,17 @@ return {
 
   config = function(_, opts)
     require("mason-lspconfig").setup(opts)
+
+    vim.lsp.config("harper_ls", {
+      settings = {
+        ["harper-ls"] = {
+          linters = {
+            SentenceCapitalization = false,
+            SpellCheck = false,
+          },
+        },
+      },
+    })
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
