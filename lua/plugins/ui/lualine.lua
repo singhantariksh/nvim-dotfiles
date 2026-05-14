@@ -17,9 +17,7 @@ return {
       lualine_y = { "location" },
       lualine_z = {
         {
-          function()
-            return "  " .. os.date("%R")
-          end,
+          "filename",
           separator = { right = "" },
           left_padding = 2,
         },
