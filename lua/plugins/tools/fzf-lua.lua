@@ -17,6 +17,8 @@ return {
     { "<leader>sQ", "<cmd>FzfLua quickfix_stack<cr>", desc = "Quickfix History" },
     { "<leader>sr", "<cmd>FzfLua resume<cr>", desc = "Search Resume" },
     { "<leader>ss", "<cmd>FzfLua builtin<cr>", desc = "Search Select FZF" },
+    -- <F8> to toggle between state changes between previewer - diff
+    { "<leader>su", "<cmd>FzfLua undotree<cr>", desc = "Navigate Undo Tree" },
     { "<leader>sw", "<cmd>FzfLua grep_cword<cr>", desc = "Search current Word" },
     { "<leader>s.", "<cmd>FzfLua oldfiles<cr>", desc = 'Search Recent Files ("." for repeat)' },
     { "<leader><leader>", "<cmd>FzfLua buffers<cr>", desc = "[ ] Find existing buffers" },
@@ -47,7 +49,7 @@ return {
       "<leader>sv",
       function()
         require("fzf-lua").files({
-          cwd = "~/Vault/",
+          cwd = vim.fn.expand("~/Vault/"),
         })
       end,
       desc = "Search Obsidian Vault files",
@@ -55,6 +57,10 @@ return {
   },
 
   opts = {
+
+    -- fzf_opts = {
+    --   ["--tiebreak"] = "index",
+    -- },
 
     -- file_ignore_patterns = { "" },
 
@@ -81,6 +87,9 @@ return {
     },
 
     files = {
+      -- below is an example to achieve a natural sort on a output list, it is slower, sometimes noticabley so
+      -- cmd = "fd --color=never --type f --type l --exclude .git --exclude .jj --exclude .obsidian | sort -V",
+      fd_opts = [[--color=never --type f --type l --exclude .git --exclude .jj --exclude .obsidian ]],
       prompt = "Files❯ ",
       git_icons = true,
       file_icons = true,

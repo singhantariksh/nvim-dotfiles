@@ -36,6 +36,7 @@ return {
         prompt = "Harpoon❯ ",
         fzf_opts = {
           ["--header"] = "ENTER: Open | CTRL-D: Delete | CTRL-C: Clear All",
+          ["--no-sort"] = "",
         },
         previewer = "builtin",
         actions = {
@@ -50,10 +51,9 @@ return {
           end,
           ["ctrl-D"] = function(selected)
             local file = selected[1]
-            for idx, item in ipairs(harpoon_files.items) do
+            for _, item in ipairs(harpoon_files.items) do
               if item.value == file then
-                table.remove(harpoon:list().items, idx)
-                harpoon:list()._length = harpoon:list()._length - 1
+                harpoon:list():remove(item)
 
                 toggle_fzf(harpoon:list())
                 break

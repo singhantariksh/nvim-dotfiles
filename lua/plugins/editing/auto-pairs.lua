@@ -8,6 +8,18 @@ return {
       --fastwwarp reverse = Alt + E
       --{(|)} > fastwarp > {(}|)
 
+      fastwrap = {
+        no_filter_nodes = {
+          "string",
+          "raw_string",
+          "string_literals",
+          "character_literal",
+          "comment",
+          "line_comment",
+          "block_comment",
+        },
+      },
+
       extensions = {
         tsnode = {
           separate = { "string", "comment" },
