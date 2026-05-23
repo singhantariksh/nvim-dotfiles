@@ -77,27 +77,51 @@ return {
     indent = { enabled = true },
     lazygit = { enabled = true, configure = true },
     notifier = { enabled = true },
+    terminal = {
+      enabled = true,
+      win = {
+        border = "rounded",
+      },
+    },
     words = { enabled = true, modes = { "n", "c" } },
   },
-  config = function(_, opts)
-    Snacks = require("snacks")
 
-    Snacks.setup(opts)
-
-    vim.keymap.set("n", "<leader>w", function()
-      Snacks.bufdelete()
-    end, { silent = true, desc = "Wipe buffer" })
-
-    vim.keymap.set("n", "<leader>tn", function()
-      Snacks.notifier.show_history()
-    end, { silent = true, desc = "Toggle notification history" })
-
-    vim.keymap.set("n", "<leader>go", function()
-      Snacks.gitbrowse()
-    end, { silent = true, desc = "Open repo in browser" })
-
-    vim.keymap.set("n", "<leader>gg", function()
-      Snacks.lazygit()
-    end, { silent = true, desc = "Open lazygit" })
-  end,
+  keys = {
+    {
+      "<leader>w",
+      function()
+        Snacks.bufdelete()
+      end,
+      desc = "Wipe buffer",
+    },
+    {
+      "<leader>tn",
+      function()
+        Snacks.notifier.show_history()
+      end,
+      desc = "Toggle notification history",
+    },
+    {
+      "<leader>go",
+      function()
+        Snacks.gitbrowse()
+      end,
+      desc = "Open repo in browser",
+    },
+    {
+      "<leader>gg",
+      function()
+        Snacks.lazygit()
+      end,
+      desc = "Open lazygit",
+    },
+    {
+      "<C-/>",
+      function()
+        Snacks.terminal()
+      end,
+      mode = { "n", "t" },
+      desc = "Toggle floating terminal",
+    },
+  },
 }
