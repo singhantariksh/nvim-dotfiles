@@ -6,7 +6,7 @@ My Neovim configuration built with Lua, and the help of [typecraft's](https://yo
 
 ## In The [Beninging](https://www.youtube.com/watch?v=vacJSHN4ZmY)
 
-**Prerequisites**: I started with Neovim 0.11.x and with [Nerd Fonts](https://www.nerdfonts.com/) too (I personally use [Maple Font NF](https://github.com/subframe7536/maple-font) btw if you care)
+**Prerequisites**: I'm on Neovim 0.12.x and with [Nerd Fonts](https://www.nerdfonts.com/) too (I personally use [Maple Font NF](https://github.com/subframe7536/maple-font) btw, [if you care])
 
 **Installation**:
 
@@ -23,7 +23,7 @@ open neovim and everything should be installed automatically (hopefully)
 ## Configuration Structure
 
 ```tree
-~/.config/nvim/
+.config/nvim
 ├── assets
 │   ├── editor.png
 │   ├── greeter.png
@@ -32,6 +32,7 @@ open neovim and everything should be installed automatically (hopefully)
 ├── init.lua
 ├── lazy-lock.json
 ├── lua
+│   ├── keybinds.lua
 │   ├── plugins
 │   │   ├── editing
 │   │   │   ├── auto-pairs.lua
@@ -41,7 +42,7 @@ open neovim and everything should be installed automatically (hopefully)
 │   │   │   ├── indent-o-matic.lua
 │   │   │   ├── lorem.lua
 │   │   │   ├── mini-modules.lua
-│   │   │   ├── smart-yank.lua
+│   │   │   ├── neogen.lua
 │   │   │   ├── todo.lua
 │   │   │   ├── ultra-fold.lua
 │   │   │   ├── undo-tree.lua
@@ -50,7 +51,9 @@ open neovim and everything should be installed automatically (hopefully)
 │   │   │   ├── blink-cmp.lua
 │   │   │   ├── code-companion.lua
 │   │   │   ├── conform.lua
+│   │   │   ├── lazydev.lua
 │   │   │   ├── lsp-config.lua
+│   │   │   ├── luasnip.lua
 │   │   │   └── treesitter.lua
 │   │   ├── tools
 │   │   │   ├── auto-session.lua
@@ -66,18 +69,16 @@ open neovim and everything should be installed automatically (hopefully)
 │   │   │   ├── which-key.lua
 │   │   │   └── yazi.lua
 │   │   └── ui
-│   │       ├── alpha-greeter.lua
-│   │       ├── bufferline.lua
 │   │       ├── lualine.lua
 │   │       ├── navic-winbar.lua
-│   │       ├── presence.lua
 │   │       ├── render-markdown.lua
 │   │       ├── showkeys.lua
 │   │       ├── smooth-cursor.lua
-│   │       └── themes.lua
+│   │       └── tokyo-night.lua
 │   ├── plugins.lua
 │   ├── preferences.lua
-│   └── terminal.lua
+│   └── snippets
+│       └── cpp.lua
 └── README.md
 ```
 
@@ -87,7 +88,7 @@ open neovim and everything should be installed automatically (hopefully)
 
 ### Startup Screen
 
-![alpha-nvim](./assets/greeter.png)
+![Snacks Dashboard](./assets/greeter.png)
 
 ### Editing Experience
 
