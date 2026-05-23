@@ -1,6 +1,11 @@
 -- Auto-install parsers on file open for main branch
 vim.api.nvim_create_autocmd({ "Filetype" }, {
   callback = function(event)
+    local ignore_fts = { "snacks_dashboard", "lazy", "mason", "fzf" }
+    if vim.tbl_contains(ignore_fts, vim.bo[event.buf].ft) then
+      return
+    end
+
     local ok, nvim_treesitter = pcall(require, "nvim-treesitter")
     if not ok then
       return

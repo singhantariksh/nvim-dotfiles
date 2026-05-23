@@ -1,6 +1,6 @@
 return {
   "rmagatti/auto-session",
-  lazy = false,
+  event = "VimEnter",
   opts = {
     log_level = "error",
     auto_session_enable_last_session = false,

@@ -8,14 +8,14 @@ return {
       function()
         require("oklch-color-picker").pick_under_cursor()
       end,
-      desc = "Color pick under cursor",
+      desc = "Call color pick under cursor",
     },
     {
       "<leader>ci",
       function()
         require("oklch-color-picker").open_picker()
       end,
-      desc = "Color insert",
+      desc = "Call color insert",
     },
     {
       "<leader>tc",

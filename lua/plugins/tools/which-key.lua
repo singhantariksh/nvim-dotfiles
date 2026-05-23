@@ -13,7 +13,7 @@ return {
       { "<leader>l", group = "LSP Functions" },
       { "<leader>s", group = "Search" },
       { "<leader>t", group = "Toggle" },
-      { "<leader>c", group = "Color" },
+      { "<leader>c", group = "Call" },
       { "<leader>y", group = "Yazi" },
     },
     win = {

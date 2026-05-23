@@ -1,7 +1,7 @@
 return {
   -- Mason-LSP Config [bridge between Mason and LSP config]
   "mason-org/mason-lspconfig.nvim",
-  event = "VeryLazy",
+  event = { "BufReadPre", "BufNewFile" },
   opts = {
     ensure_installed = {
       "clangd",

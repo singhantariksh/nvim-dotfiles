@@ -1,7 +1,6 @@
 return {
   {
     "echasnovski/mini.surround",
-    event = "VeryLazy",
     version = false,
     keys = {
       { "sa" },
@@ -16,17 +15,15 @@ return {
 
   {
     "echasnovski/mini.splitjoin",
-    event = "VeryLazy",
     version = false,
     keys = { { "gS" } },
     opts = {},
   },
 
-  -- {
-  --   "echasnovski/mini.ai",
-  --   event = "VeryLazy",
-  --   version = false,
-  --   keys = { { "a" }, { "i" } },
-  --   opts = {},
-  -- },
+  {
+    "echasnovski/mini.ai",
+    version = false,
+    keys = { { "a" }, { "i" } },
+    opts = {},
+  },
 }
