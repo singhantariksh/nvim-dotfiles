@@ -16,7 +16,7 @@ return {
     { "<leader>sq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix List" },
     { "<leader>sQ", "<cmd>FzfLua quickfix_stack<cr>", desc = "Quickfix History" },
     { "<leader>sr", "<cmd>FzfLua resume<cr>", desc = "Search Resume" },
-    { "<leader>sa", "<cmd>FzfLua builtin<cr>", desc = "Search All FZF Options" },
+    { "<leader>ss", "<cmd>FzfLua builtin<cr>", desc = "Search Select FZF" },
     -- <F8> to toggle between state changes between previewer - diff
     { "<leader>su", "<cmd>FzfLua undotree<cr>", desc = "Navigate Undo Tree" },
     { "<leader>sw", "<cmd>FzfLua grep_cword<cr>", desc = "Search current Word" },
