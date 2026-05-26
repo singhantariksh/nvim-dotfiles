@@ -39,8 +39,8 @@ vim.keymap.set("n", "<A-K>", ":m .-2<CR>==", { noremap = true, silent = true, de
 -- Move visual blocks
 vim.keymap.set("v", "<A-J>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move block down" })
 vim.keymap.set("v", "<A-K>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move block up" })
-vim.keymap.set("v", "<A-L>", ">gv", { noremap = true, silent = true, desc = "Move block left" })
-vim.keymap.set("v", "<A-H>", "<gv", { noremap = true, silent = true, desc = "Move block right" })
+vim.keymap.set("v", "<A-L>", ">gv", { noremap = true, silent = true, desc = "Move block right" })
+vim.keymap.set("v", "<A-H>", "<gv", { noremap = true, silent = true, desc = "Move block left" })
 
 -- Toggle Harper Spell Checker
 vim.keymap.set("n", "<leader>th", function()

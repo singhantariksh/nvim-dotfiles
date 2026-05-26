@@ -3,6 +3,9 @@ return {
   version = "*",
   ft = { "markdown", "mdx" },
   opts = {
+    ui = {
+      enable = false,
+    },
     legacy_commands = false,
     workspaces = {
       {

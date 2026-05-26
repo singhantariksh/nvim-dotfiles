@@ -116,12 +116,12 @@ return {
       desc = "Open lazygit",
     },
     {
-      "<C-/>",
+      "<leader>tt",
       function()
         Snacks.terminal()
       end,
       mode = { "n", "t" },
-      desc = "Toggle floating terminal",
+      desc = "Toggle terminal",
     },
   },
 }
