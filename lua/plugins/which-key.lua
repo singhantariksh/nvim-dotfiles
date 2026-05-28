@@ -8,13 +8,14 @@ return {
     },
     spec = {
       { "<leader>a", group = "Auto Session" },
+      { "<leader>c", group = "Code" },
       { "<leader>d", group = "Debugger" },
       { "<leader>g", group = "Git Hunk", mode = { "n", "v" } },
       { "<leader>h", group = "Harpoon Files" },
       { "<leader>l", group = "LSP Functions" },
+      { "<leader>p", group = "Picker" },
       { "<leader>s", group = "Search" },
       { "<leader>t", group = "Toggle" },
-      { "<leader>c", group = "Call" },
       { "<leader>y", group = "Yazi" },
     },
     win = {

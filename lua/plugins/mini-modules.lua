@@ -16,7 +16,7 @@ return {
   {
     "echasnovski/mini.splitjoin",
     version = false,
-    keys = { { "gS" } },
+    keys = { {"gS", desc = "Split Line"} },
     opts = {},
   },
 

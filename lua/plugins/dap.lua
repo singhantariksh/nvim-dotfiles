@@ -15,8 +15,8 @@ return {
     -- Debug Adapter Protocol Binds
     { "<leader>dd", "<cmd>DapDisconnect<cr>", desc = "Disconnect" },
     { "<leader>db", "<cmd>DapToggleBreakpoint<cr>", desc = "Toggle Breakpoint" },
-    { "<leader>dc", "<cmd>DapClearBreakpoint<cr>", desc = "Clear Breakpoint" },
-    { "<leader>dn", "<cmd>DapContinue<cr>", desc = "Continue" },
+    { "<leader>dB", "<cmd>DapClearBreakpoint<cr>", desc = "Clear Breakpoint" },
+    { "<leader>dc", "<cmd>DapContinue<cr>", desc = "Continue" },
     { "<leader>di", "<cmd>DapStepInto<cr>", desc = "Step Into" },
     { "<leader>do", "<cmd>DapStepOut<cr>", desc = "Step Out" },
     { "<leader>dO", "<cmd>DapStepOver<cr>", desc = "Step Over" },

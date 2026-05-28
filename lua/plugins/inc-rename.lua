@@ -3,6 +3,6 @@ return {
   event = "VeryLazy",
   opts = {},
   keys = {
-    { "<leader>r", ":IncRename ", { silent = true, desc = "Rename" } },
+    { "<leader>cr", ":IncRename ", { silent = true, desc = "Code Rename" } },
   },
 }

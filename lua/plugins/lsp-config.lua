@@ -47,10 +47,14 @@ return {
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)
+        local map = function(keys, func, desc)
+          vim.keymap.set("n", keys, func, { buffer = ev.buf, silent = true, desc = desc })
+        end
+
         -- replaced by inc-rename plugin
         -- vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = ev.buf, silent = true, desc = "Rename" })
 
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, silent = true, desc = "Hover" })
+        map("K", vim.lsp.buf.hover, "Hover")
 
         vim.keymap.set(
           "i",
@@ -58,80 +62,29 @@ return {
           vim.lsp.buf.signature_help,
           { buffer = ev.buf, silent = true, desc = "Signature Help" }
         )
-        -- moved to fzf lua config
-        -- vim.keymap.set("n", "<leader>sd", "<cmd>FzfLua lsp_document_diagnostics<CR>", { desc = "Search Diagnostics" })
+        map("<leader>q", vim.diagnostic.setqflist, "Diagnostics to Quickfix")
 
-        vim.keymap.set("n", "<leader>ll", "<cmd>FzfLua lsp_finder<CR>", { desc = "Search LSP Finder" })
+        map("<leader>Q", vim.diagnostic.setloclist, "Buffer Diagnostics to Loclist")
 
-        vim.keymap.set(
-          "n",
-          "<leader>ld",
-          "<cmd>FzfLua lsp_definitions<CR>",
-          { buffer = ev.buf, silent = true, desc = "Go to Definition" }
-        )
+        map("<leader>ca", "<cmd>FzfLua lsp_code_actions<CR>", "Code actions")
 
-        vim.keymap.set(
-          "n",
-          "<leader>lD",
-          "<cmd>FzfLua lsp_declarations<CR>",
-          { buffer = ev.buf, silent = true, desc = "Go to Declaration" }
-        )
+        map("<leader>cd", vim.diagnostic.open_float, "Code Diagnostic")
 
-        vim.keymap.set(
-          "n",
-          "<leader>d",
-          vim.diagnostic.open_float,
-          { buffer = ev.buf, silent = true, desc = "Show Diagnostic" }
-        )
+        map("gd", "<cmd>FzfLua lsp_definitions<CR>", "Goto Definition")
 
-        vim.keymap.set(
-          "n",
-          "<leader>li",
-          "<cmd>FzfLua lsp_implementations<CR>",
-          { buffer = ev.buf, silent = true, desc = "Go to Implementation" }
-        )
+        map("gD", "<cmd>FzfLua lsp_declarations<CR>", "Goto Declaration")
 
-        vim.keymap.set(
-          "n",
-          "<leader>lr",
-          "<cmd>FzfLua lsp_references<CR>",
-          { buffer = ev.buf, silent = true, desc = "Find References" }
-        )
+        map("gI", "<cmd>FzfLua lsp_implementations<CR>", "Goto Implementation")
 
-        vim.keymap.set(
-          "n",
-          "<leader>ls",
-          "<cmd>FzfLua lsp_document_symbols<CR>",
-          { buffer = ev.buf, silent = true, desc = "Document Symbols" }
-        )
+        map("gR", "<cmd>FzfLua lsp_references<CR>", "Goto References")
 
-        vim.keymap.set(
-          "n",
-          "<leader>lS",
-          "<cmd>FzfLua lsp_workspace_symbols<CR>",
-          { buffer = ev.buf, silent = true, desc = "Workspace Symbols" }
-        )
+        map("gy", "<cmd>FzfLua lsp_typedefs<CR>", "Goto Type Definition")
 
-        vim.keymap.set(
-          "n",
-          "<leader>lt",
-          "<cmd>FzfLua lsp_typedefs<CR>",
-          { buffer = ev.buf, silent = true, desc = "Type Definition" }
-        )
+        map("<leader>ll", "<cmd>FzfLua lsp_finder<CR>", "Search LSP Finder")
 
-        vim.keymap.set(
-          "n",
-          "<leader>q",
-          vim.diagnostic.setqflist,
-          { buffer = ev.buf, silent = true, desc = "Diagnostics to Quickfix" }
-        )
+        map("<leader>ls", "<cmd>FzfLua lsp_document_symbols<CR>", "Document Symbols")
 
-        vim.keymap.set(
-          "n",
-          "<leader>Q",
-          vim.diagnostic.setloclist,
-          { buffer = ev.buf, silent = true, desc = "Buffer Diagnostics to Loclist" }
-        )
+        map("<leader>lS", "<cmd>FzfLua lsp_workspace_symbols<CR>", "Workspace Symbols")
       end,
     })
   end,

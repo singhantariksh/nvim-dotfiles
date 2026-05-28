@@ -4,18 +4,18 @@ return {
   version = "*",
   keys = {
     {
-      "<leader>cc",
+      "<leader>pc",
       function()
         require("oklch-color-picker").pick_under_cursor()
       end,
-      desc = "Call color pick under cursor",
+      desc = "pick color under cursor",
     },
     {
-      "<leader>ci",
+      "<leader>pi",
       function()
         require("oklch-color-picker").open_picker()
       end,
-      desc = "Call color insert",
+      desc = "palette color insert",
     },
     {
       "<leader>tc",

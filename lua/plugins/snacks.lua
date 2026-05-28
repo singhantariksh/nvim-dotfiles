@@ -80,6 +80,7 @@ return {
     terminal = {
       enabled = true,
       win = {
+        style = "float",
         border = "rounded",
       },
     },

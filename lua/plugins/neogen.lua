@@ -6,11 +6,11 @@ return {
   },
   keys = {
     {
-      "<leader>cn",
+      "<leader>cg",
       function()
         require("neogen").generate()
       end,
-      desc = "Call neogen",
+      desc = "Code neoGen",
     },
   },
 }
