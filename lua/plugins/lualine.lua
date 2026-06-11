@@ -10,11 +10,11 @@ return {
     },
     sections = {
       lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
-      lualine_b = { "filename" },
-      lualine_c = { "diagnostics" },
-      -- lualine_c = { "%=", "filename" }, -- filename at the center of the statusline
-      lualine_x = { "branch", "diff" },
-      lualine_y = { "encoding", "fileformat" },
+      lualine_b = { "branch", "diff", "diagnostics" },
+      -- lualine_c = { "filename" },
+      lualine_c = { "%=", "filename" }, -- filename at the center of the statusline
+      lualine_x = { "encoding", "fileformat" },
+      lualine_y = { "progress" },
       lualine_z = {
         {
           "location",

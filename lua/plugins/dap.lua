@@ -22,7 +22,16 @@ return {
     { "<leader>dO", "<cmd>DapStepOver<cr>", desc = "Step Over" },
   },
 
-  config = function()
+  opts = {
+    winbar = {
+      controls = {
+        enabled = true,
+      },
+    },
+  },
+
+  config = function(_, opts)
+    require("dap-view").setup(opts)
 
     require("mason-nvim-dap").setup({
       ensure_installed = { "codelldb" },

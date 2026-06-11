@@ -53,6 +53,7 @@ return {
             { open = "(", close = ")" },
             { open = "[", close = "]" },
             { open = "{", close = "}" },
+            { open = "<", close = ">" },
           },
           ignore_beginning = true,
           exclude = {},

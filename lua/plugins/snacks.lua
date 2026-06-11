@@ -44,7 +44,7 @@ return {
           },
           padding = 2,
         },
-        { section = "startup" },
+        { section = "startup", icon = "" },
       },
     },
     gitbrowse = { enabled = true },
@@ -117,7 +117,7 @@ return {
       desc = "Open lazygit",
     },
     {
-      "<leader>tt",
+      "<C-\\>",
       function()
         Snacks.terminal()
       end,
