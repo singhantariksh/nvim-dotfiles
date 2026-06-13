@@ -16,13 +16,32 @@ return {
       left_pad = 2,
       right_pad = 4,
     },
-    checkbox = {
-      render_mode = true,
-    },
     win_options = {
       conceallevel = {
         default = 2,
         rendered = 2,
+      },
+    },
+    checkbox = {
+      render_mode = true,
+      unchecked = {
+        icon = " ",
+        highlight = "RenderMarkdownUnchecked",
+        scope_highlight = nil,
+      },
+      checked = {
+        icon = " ",
+        highlight = "RenderMarkdownChecked",
+        scope_highlight = nil,
+      },
+      custom = {
+        canceled = { raw = "[-]", rendered = "󰜺 ", highlight = "ErrorMsg" },
+        todo = { raw = "[/]", rendered = "󰦖 ", highlight = "Keyword" },
+        forwarded = { raw = "[>]", rendered = " ", highlight = "Identifier" },
+        scheduled = { raw = "[<]", rendered = " ", highlight = "DiagnosticHint" },
+        important = { raw = "[!]", rendered = " ", highlight = "Constant" },
+        question = { raw = "[?]", rendered = " ", highlight = "@string.regexp" },
+        star = { raw = "[*]", rendered = " ", highlight = "WarningMsg" },
       },
     },
   },

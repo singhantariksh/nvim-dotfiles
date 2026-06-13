@@ -5,7 +5,17 @@ return {
   version = "1.*",
   opts = {
     keymap = {
-      preset = "default",
+      preset = "none",
+
+      ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+      ["<C-e>"] = { "hide", "fallback" },
+      ["<C-y>"] = { "select_and_accept", "fallback" },
+
+      ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
+      ["<C-n>"] = { "select_next", "fallback_to_mappings" },
+
+      ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+      ["<C-f>"] = { "scroll_documentation_down", "fallback" },
 
       ["<Tab>"] = false,
       ["<S-Tab>"] = false,
@@ -15,7 +25,7 @@ return {
       ["<C-j>"] = { "snippet_forward", "fallback" },
       ["<C-k>"] = { "snippet_backward", "fallback" },
 
-      ["<C-h>"] = { "show_signature", "hide_signature", "fallback" },
+      ["<C-s>"] = { "show_signature", "hide_signature", "fallback" },
     },
     snippets = {
       preset = "luasnip",
