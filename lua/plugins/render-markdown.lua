@@ -12,9 +12,10 @@ return {
     },
     heading = {
       sign = false,
+      icons = { "󰲡 ", "󰲢 ", "󰲥 ", "󰲦 ", "󰲩 ", "󰲪 " },
       width = "block",
-      left_pad = 2,
-      right_pad = 4,
+      left_pad = 0,
+      right_pad = 1,
     },
     win_options = {
       conceallevel = {

@@ -19,9 +19,15 @@ return {
         sp = colors.bg_highlight,
       }
 
+      -- the color of my skellys should be yellow-orange-pale whatever
       hl.SnacksDashboardHeader = {
         fg = colors.warning,
       }
+
+      -- color styled text - inspiration from obsidian
+      hl["@markup.strikethrough"] = { fg = colors.comment, strikethrough = true }
+      hl["@markup.strong"] = { fg = colors.magenta, bold = true }
+      hl["@markup.italic"] = { fg = colors.cyan, italic = true }
     end,
   },
 
