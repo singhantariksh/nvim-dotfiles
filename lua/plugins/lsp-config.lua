@@ -11,7 +11,7 @@ return {
       "jdtls",
       "lua_ls",
       "jsonls",
-      "lua_ls",
+      "luau_lsp",
       "omnisharp",
       "pyright",
       "qmlls",

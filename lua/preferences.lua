@@ -37,6 +37,14 @@ vim.filetype.add({
 vim.treesitter.language.register("markdown", "mdx")
 vim.treesitter.language.register("markdown", "vimwiki")
 
+-- Add luau as a valid filetype
+vim.filetype.add({
+  extension = {
+    luau = "luau",
+  },
+})
+vim.treesitter.language.register("lua", "luau")
+
 -- Colors & UI
 vim.g.background = "dark"
 vim.opt.termguicolors = true -- enable truecolor support

@@ -7,6 +7,7 @@ return {
     formatters_by_ft = {
       -- Lua
       lua = { "stylua" },
+      luau = { "stylua" },
 
       -- C/C++
       c = { "clang-format" },
@@ -16,7 +17,7 @@ return {
       cs = { "csharpier" },
 
       -- Python
-      python = { "isort", "black" },
+      python = { "ruff" },
 
       -- Java
       java = { "google-java-format" },
@@ -39,12 +40,12 @@ return {
       mongodb = prettier_opts,
 
       -- Other
-      go = { "gofmt" },
+      go = { "goimports", "gofmt" },
       sh = { "shfmt" },
       toml = { "taplo" },
       yaml = prettier_opts,
       json = prettier_opts,
-      xml = prettier_opts,
+      xml = { "xmlformatter" },
       markdown = prettier_opts,
     },
 
