@@ -1,0 +1,11 @@
+{
+	"javascript": {
+		"experimentalEmbeddedSnippetsEnabled": true
+	},
+	"html": {
+		"experimentalFullSupportEnabled": true,
+		"formatter": {
+			"enabled": true
+		}
+	}
+}

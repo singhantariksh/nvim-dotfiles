@@ -1,0 +1,15 @@
+{
+  "markdown": {
+    "table.cellPadding": "space"
+  },
+  "dockerfile": {
+  },
+  "excludes": [
+    "**/node_modules",
+    "**/*-lock.json"
+  ],
+  "plugins": [
+    "npm:@dprint/markdown@0.23.3",
+    "npm:@dprint/dockerfile@0.6.0"
+  ]
+}

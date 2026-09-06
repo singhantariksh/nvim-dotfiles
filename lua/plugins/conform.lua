@@ -17,7 +17,7 @@ return {
       cs = { "csharpier" },
 
       -- Python
-      python = { "ruff" },
+      python = { "ruff_format", "ruff_fix", "ruff_organize_imports" },
 
       -- Java
       java = { "google-java-format" },
@@ -26,27 +26,48 @@ return {
       rust = { "rustfmt" },
 
       -- Web
-      javascript = prettier_opts,
-      javascriptreact = prettier_opts,
-      typescript = prettier_opts,
-      typescriptreact = prettier_opts,
-      html = prettier_opts,
-      css = prettier_opts,
+      javascript = { "biome" },
+      javascriptreact = { "biome" },
+      typescript = { "biome" },
+      typescriptreact = { "biome" },
+      html = { "biome" },
+      css = { "biome" },
+      scss = { "biome" },
+      json = { "biome" },
+      jsonc = { "biome" },
+      yaml = { "biome" },
+      vue = { "biome" },
+      svelte = { "biome" },
+      astro = { "biome" },
+      graphql = { "biome" },
+      mongodb = prettier_opts,
 
       -- SQL
       sql = { "sqlfmt" },
 
-      -- Mongo (JS/JSON format)
-      mongodb = prettier_opts,
-
       -- Other
       go = { "goimports", "gofmt" },
       sh = { "shfmt" },
-      toml = { "taplo" },
-      yaml = prettier_opts,
-      json = prettier_opts,
       xml = { "xmlformatter" },
-      markdown = prettier_opts,
+      toml = { "taplo" },
+      markdown = { "dprint" },
+      dockerfile = { "dprint" },
+      mdx = prettier_opts,
+    },
+
+    formatters = {
+      dprint = {
+        prepend_args = {
+          "--config",
+          vim.fn.stdpath("config") .. "/dprint.json",
+        },
+      },
+      biome = {
+        prepend_args = {
+          "--config-path",
+          vim.fn.stdpath("config") .. "/biome.json",
+        },
+      },
     },
 
     -- Format on save (disabled by default)
