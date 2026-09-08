@@ -1,7 +1,7 @@
 return {
   {
     "folke/lazydev.nvim",
-    ft = "lua",
+    ft = { "lua", "luau" },
     cmd = "LazyDev",
     opts = {
       library = {

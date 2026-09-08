@@ -1,6 +1,7 @@
 vim.loader.enable()
 
 -- Basic Settings
+vim.o.exrc = true
 
 -- Leader keys
 vim.g.mapleader = " "
@@ -43,7 +44,7 @@ vim.filetype.add({
     luau = "luau",
   },
 })
-vim.treesitter.language.register("lua", "luau")
+-- vim.treesitter.language.register("lua", "luau")
 
 -- Colors & UI
 vim.g.background = "dark"

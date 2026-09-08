@@ -9,7 +9,6 @@ return {
       "harper_ls",
       "html",
       "jdtls",
-      "lua_ls",
       "jsonls",
       "luau_lsp",
       "omnisharp",
