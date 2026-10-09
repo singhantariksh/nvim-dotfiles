@@ -56,7 +56,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 2
 
 -- Better search
 vim.opt.ignorecase = true

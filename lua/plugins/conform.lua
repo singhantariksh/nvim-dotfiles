@@ -63,9 +63,8 @@ return {
         },
       },
       biome = {
-        prepend_args = {
-          "--config-path",
-          vim.fn.stdpath("config") .. "/biome.json",
+        env = {
+          BIOME_CONFIG_PATH = vim.fn.stdpath("config") .. "/biome.json",
         },
       },
     },
